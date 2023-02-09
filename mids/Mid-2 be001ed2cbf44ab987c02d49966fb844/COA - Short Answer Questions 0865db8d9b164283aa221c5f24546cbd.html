@@ -1,0 +1,670 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>COA - Short Answer Questions</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="0865db8d-9b16-4283-aa22-1c5f24546cbd" class="page sans"><header><h1 class="page-title">COA - Short Answer Questions</h1></header><div class="page-body"><h1 id="fca639cd-66f4-4167-bdc6-ffc7efda5750" class=""><strong>Define Privileged and Non-Privileged instructions?</strong></h1><p id="8ffa89ed-5788-44f8-861a-4d914ced644b" class=""><strong>What are Privileged Instructions?</strong></p><blockquote id="fd19b5a6-3256-4091-bfc1-967f6d4f3017" class="">The Instructions that can run only in Kernel Mode are called Privileged Instructions .</blockquote><p id="5fd2201e-ef10-4a68-8fb9-4dbd17552afc" class="">Privileged Instructions possess the following characteristics :</p><p id="41f0270b-2f86-4346-bb8c-121f2dfa0c6f" class="">(i) If any attempt is made to execute a Privileged Instruction in User Mode, then it will not be executed and treated as an illegal instruction. The Hardware traps it in the Operating System.</p><p id="ddb98b6a-3714-471e-a555-d7e2f1095d0c" class="">(ii) Before transferring the control to any User Program, it is the responsibility of the Operating System to ensure that the <strong>Timer</strong> is set to interrupt. Thus, if the timer interrupts then the Operating System regains the control. Thus, any instruction which can modify the contents of the Timer is Privileged Instruction.</p><p id="e91e83aa-b2d5-45de-821b-f7388226ebe0" class="">(iii) Privileged Instructions are used by the Operating System in order to achieve correct operation.</p><p id="fb95f973-801f-4fde-96f3-49e8bed940e8" class="">(iv) Various examples of Privileged Instructions include:</p><ul id="11ac37c8-bf82-483a-b8fc-9523606bdcc2" class="bulleted-list"><li style="list-style-type:disc">I/O instructions and Halt instructions</li></ul><ul id="08198a58-b4e9-4f89-8d0f-a09fbbdd769a" class="bulleted-list"><li style="list-style-type:disc">Turn off all Interrupts</li></ul><ul id="a33e351d-6927-4382-96cb-141bdff799ba" class="bulleted-list"><li style="list-style-type:disc">Set the Timer</li></ul><ul id="4e952fb3-27e6-4d7a-8869-ea46e0c0dee4" class="bulleted-list"><li style="list-style-type:disc">Context Switching</li></ul><ul id="aa971147-a942-4982-8381-93ebf65fc263" class="bulleted-list"><li style="list-style-type:disc">Clear the Memory or Remove a process from the Memory</li></ul><ul id="e20dc082-082c-461f-9bf6-f12ee540bb17" class="bulleted-list"><li style="list-style-type:disc">Modify entries in the Device-status table</li></ul><p id="c8f489bc-d05d-40d6-9e9c-923c9aff1d02" class=""><strong>What are Non-Privileged Instructions?</strong></p><blockquote id="eb431868-ef23-4996-b19d-d55f11224a43" class="">The Instructions that can run only in User Mode are called Non-Privileged Instructions .</blockquote><p id="85bdb0a9-4982-4044-810a-fb957a6b5139" class="">Various examples of Non-Privileged Instructions include:</p><ul id="7c600cdb-eebd-45b0-b7f8-98af78995a19" class="bulleted-list"><li style="list-style-type:disc">Reading the status of Processor</li></ul><ul id="ed4b6eb1-9373-4bf3-ba5e-0dc134bfd6d9" class="bulleted-list"><li style="list-style-type:disc">Reading the System Time</li></ul><ul id="41be750a-a79f-48aa-b819-8b2e9d69f52b" class="bulleted-list"><li style="list-style-type:disc">Generate any Trap Instruction</li></ul><ul id="e700cd2d-a24d-49fb-a5b0-381e056e0c1c" class="bulleted-list"><li style="list-style-type:disc">Sending the final printout of Printer</li></ul><p id="5016a3ee-d907-4a42-840b-d1ad8f4b9887" class="">Also, it is important to note that in order to change the mode from Privileged to Non-Privileged, we require a Non-privileged Instruction that does not generate any interrupt.</p><h1 id="c2b7ed2b-697b-40a1-9742-9c3a72239baf" class=""><strong>Draw the process state diagram?</strong></h1><figure id="dc4a93a0-0f6f-4bea-825c-aee378070066" class="image"><a href="https://vishnusrivatsava.github.io/mids/coa/Short%20Answer%20Questions%20dcff684452ed413394b4c21d3543a8f3/Untitled.png"><img src="https://vishnusrivatsava.github.io/mids/coa/Short%20Answer%20Questions%20dcff684452ed413394b4c21d3543a8f3/Untitled.png"/></a></figure><h1 id="80116a92-9cad-4693-9d44-fe962ecbdc18" class=""><strong>Define instruction stream and data stream?</strong></h1><p id="c5fd6c2b-a063-4ffa-8ce7-c65e412eb617" class="">An instruction stream and a data stream are two different types of streams that occur in computer architecture.</p><p id="6b17f2f6-6e91-4adc-be6e-4eb167dc626d" class="">An instruction stream is a sequence of instructions that are executed by the central processing unit (CPU) of a computer. The instructions in the instruction stream tell the CPU what operations to perform and on what data. The instruction stream is stored in memory and is fetched by the CPU as needed.</p><p id="51898fb4-d761-4128-a87e-0b4cd003c81b" class="">A data stream, on the other hand, is a sequence of data values that are processed by the CPU in accordance with the instructions in the instruction stream. The data stream can originate from various sources such as memory, input/output (I/O) devices, or other processes. The data stream is used by the CPU to perform the operations specified by the instruction stream.</p><p id="29f0204f-61f2-4e52-b228-413926ebe7ed" class="">In summary, the instruction stream provides the CPU with the information it needs to perform operations, while the data stream provides the CPU with the values it needs to perform those operations.</p><h1 id="1c072cf7-a83b-4e99-a321-85e8044e92e5" class=""><strong>What are Pipeline hazards?</strong></h1><p id="72201593-becc-4e2f-bb72-09badc62bc3d" class="">Pipeline hazards are potential problems that arise when executing instructions in a pipeline, a technique used in computer architecture to improve the performance of the CPU. Pipelining divides the instruction execution process into multiple stages, allowing multiple instructions to be processed in parallel. This can increase the overall processing speed of the CPU, but it also introduces the possibility of pipeline hazards.</p><p id="5d57effe-9a5d-410a-b74b-8a8a929778f2" class="">There are three main types of pipeline hazards:</p><ol type="1" id="bc60049e-37fe-41ac-bc42-4f4daa1449cb" class="numbered-list" start="1"><li>Structural hazards: Structural hazards occur when there is not enough hardware resources available to support the execution of all instructions in the pipeline. For example, if the pipeline only has one ALU (arithmetic logic unit) and two instructions that both require the ALU at the same time, a structural hazard will occur.</li></ol><ol type="1" id="13474afb-1586-4626-8140-2cbe8e615da8" class="numbered-list" start="2"><li>Data hazards: Data hazards occur when the pipeline tries to access data that is not yet available or has not been updated. For example, if an instruction writes to a register and a subsequent instruction attempts to read from the same register before the write operation has completed, a data hazard will occur.</li></ol><ol type="1" id="3c65ce80-f698-4241-b1da-5e05bc692d56" class="numbered-list" start="3"><li>Control hazards: Control hazards occur when the pipeline must wait for the results of a branch instruction before it can continue execution. This is because the pipeline must first determine the target of the branch before it can fetch the next instruction.</li></ol><p id="d10ea177-7dcb-4a20-985c-b744a652b98b" class="">Pipeline hazards can slow down the execution of instructions and reduce the overall performance of the CPU. To mitigate the effects of pipeline hazards, modern CPUs use techniques such as forwarding, stalling, and branch prediction to minimize the delay caused by pipeline hazards.</p><h1 id="92af03fe-c312-41e4-acd7-ba1e0ab9db3c" class=""><strong>What is interleaving memory?</strong></h1><p id="58bc3fc3-c405-4c54-bc3a-b5c449782d83" class="">Interleaved memory is a technique used in computer memory design to improve the performance of the system by spreading data across multiple memory banks.</p><p id="215a9c68-0b31-45ad-a42c-a2dc31a27d5e" class="">In a traditional memory architecture, all memory accesses are serviced by a single bank of memory. This can result in a bottleneck, as the memory access time is limited by the speed of the single memory bank. Interleaved memory, on the other hand, distributes data across multiple banks, allowing multiple memory accesses to occur simultaneously. This can result in a significant improvement in performance, as the total memory access time is reduced.</p><p id="270afb79-145f-4ab0-9b01-e69f9e404d29" class="">For example, if a computer has two memory banks, an interleaved memory design would alternate between the two banks, storing consecutive memory addresses in alternating banks. This allows the CPU to access multiple memory locations in parallel, improving the overall memory access time.</p><p id="0967999f-5868-4d30-aede-ee7d00ecfbb0" class="">Interleaved memory is commonly used in high-performance computing systems and servers, where the demand for fast memory access is high. It can also be used in desktop computers and laptops to improve the performance of memory-intensive applications.</p><h1 id="625e747d-fbf8-4453-bb25-1c8560cde498" class=""><strong>What is the cache coherency?</strong></h1><p id="f4a173c1-5c73-46f5-8747-1f39675930b1" class="">Cache coherency is a property of computer systems that ensures that the data stored in the cache memory is consistent with the data stored in main memory. Cache memory is a small, fast memory that is used to store frequently accessed data, allowing the CPU to access this data much faster than it would be able to access data stored in main memory.</p><p id="fd3a9ecc-7b43-4423-a778-88f3dc391620" class="">In a computer system with multiple processors or cores, each processor may have its own cache memory. When one processor modifies a shared piece of data, it must update the caches of all other processors to maintain cache coherency. If this is not done, each processor may have a different copy of the data, leading to inconsistencies and incorrect results.</p><p id="2467dc27-df16-400b-8896-8bd3fa4bdcf7" class="">Cache coherency is maintained through a variety of techniques, such as snooping, directory-based coherency, and message-based coherency. These techniques allow the caches to communicate with each other and maintain consistency, even when multiple processors access the same data simultaneously.</p><p id="da74c168-62ce-40f3-8991-bc2818b3321d" class="">Cache coherency is critical to the correct operation of multi-processor systems, as it ensures that all processors have a consistent view of the data, avoiding data inconsistencies and incorrect results.</p><h1 id="0f0a2d38-6436-448c-861d-cbba0927c151" class=""><strong>How many types of ROM?</strong></h1><p id="e5a60c14-905a-4644-9bb5-059559a85f76" class="">There are several types of Read-Only Memory (ROM) used in computer systems:</p><ol type="1" id="ee7cf9b9-dad8-4df1-81c6-6df52cdb3e35" class="numbered-list" start="1"><li>Masked ROM: This type of ROM is pre-programmed at the factory and cannot be changed. The data is stored in the ROM in a permanent manner and is not alterable.</li></ol><ol type="1" id="ff26d37e-3fa1-432e-9f12-9b2d2836c816" class="numbered-list" start="2"><li>PROM (Programmable Read-Only Memory): This type of ROM can be programmed once by the user, but once programmed, the data is permanent and cannot be changed.</li></ol><ol type="1" id="7e660ee2-5aed-4eee-b627-fda4469efcbb" class="numbered-list" start="3"><li>EPROM (Erasable Programmable Read-Only Memory): This type of ROM can be programmed and erased using ultraviolet light. EPROMs can be reprogrammed multiple times.</li></ol><ol type="1" id="96f8f5b9-46aa-403c-b632-77b6fb9c7d98" class="numbered-list" start="4"><li>EEPROM (Electrically Erasable Programmable Read-Only Memory): This type of ROM can be programmed and erased electrically, allowing for in-system reprogramming.</li></ol><ol type="1" id="2c4acda2-b983-4be6-9848-880d4becde0e" class="numbered-list" start="5"><li>Flash ROM: This type of ROM is similar to EEPROM but with a larger capacity and faster programming and erasing times. Flash ROM is widely used in modern electronic devices, such as smartphones and digital cameras, to store firmware and other non-volatile data.</li></ol><ol type="1" id="49736d71-8a81-4151-b74f-6e8c37c6760b" class="numbered-list" start="6"><li>OTP (One-Time Programmable) ROM: This type of ROM can be programmed only once and is used in applications where the data needs to be secured and cannot be altered.</li></ol><p id="93756611-982e-44ac-95bc-8f195fcc5850" class="">In summary, there are several types of ROM, ranging from permanent, unchangeable memory to reprogrammable memory that can be updated multiple times. The type of ROM used in a given system depends on the requirements of the application and the desired level of flexibility.</p><h1 id="c530ea76-2387-4c95-a615-3f376f5ede2e" class=""><strong>Differentiate between static RAM and dyanmic RAM?</strong></h1><table id="8ded3e6b-39fa-4812-b342-17bb5fe881e0" class="simple-table"><tbody><tr id="dc18f2e4-a462-4262-8d61-01932e16952c"><td id="a]vm" class=""><strong>Parameter</strong></td><td id="Euc`" class=""><strong>SRAM</strong></td><td id="^CeA" class=""><strong>DRAM</strong></td></tr><tr id="ac69e262-b33b-4098-96bf-f0cce50982cc"><td id="a]vm" class="">Definition</td><td id="Euc`" class="">Static random-access memory is a specific type of memory of a semiconductor. It makes use of bistable latching circuitry to store every bit of data. SRAM is static. A user does not have to refresh it periodically for it to perform.</td><td id="^CeA" class="">Dynamic random-access memory is a type of RAM that serves as storage for every data bit within another capacitor in any given IC (integrated circuit).</td></tr><tr id="997343a1-c063-4d99-a131-1ff83f3da53e"><td id="a]vm" class="">General Applications</td><td id="Euc`" class="">The general application areas of an SRAM are the L3 and L2 cache units in the CPU.</td><td id="^CeA" class="">The DRAM works as the main memory in the computers (for example, DDR3).</td></tr><tr id="763e94dc-4735-4ab9-880c-781250ebccef"><td id="a]vm" class="">Size</td><td id="Euc`" class="">SRAM typically has a storage capacity of 1 MB- 16 MB.</td><td id="^CeA" class="">DRAM has a usual capacity of 1 GB0 2GB, commonly found in tablets and smartphones. In most laptops, its storage capacity can be up to 4 GB- 16GB.</td></tr><tr id="96503c8e-1da6-470b-80ad-1e521e9aa102"><td id="a]vm" class="">Position of Memory</td><td id="Euc`" class="">You can find SRAM on the processor. Or it stays lodged between the processor and the main memory of any computing device.</td><td id="^CeA" class="">You can find DRAM on the motherboard of a device.</td></tr><tr id="5c16c718-6d72-4586-9b9a-1e7a3257b7f9"><td id="a]vm" class="">Storage Capacity</td><td id="Euc`" class="">SRAM usually has a smaller size of storage.</td><td id="^CeA" class="">The storage capacity of DRAM is comparatively larger.</td></tr><tr id="38247de2-70bd-4a61-9d8d-40d62296fa46"><td id="a]vm" class="">Speed</td><td id="Euc`" class="">SRAM stays in the form of on-chip memory. The access time is lesser than DRAM. Thus, it is comparatively faster.</td><td id="^CeA" class="">DRAM possesses the characteristics of off-chip memory. The substantial access time is more than SRAM, and thus, it is slower.</td></tr><tr id="d128ca29-fccf-4ba1-8a2c-3500264aab40"><td id="a]vm" class="">Cost</td><td id="Euc`" class="">SRAM is less cost-effective and more expensive than DRAM.</td><td id="^CeA" class="">DRAM is available at a reasonable price. It is more cost-effective.</td></tr><tr id="b56b919a-5bfa-4765-8ee9-02c61127b12c"><td id="a]vm" class="">Density</td><td id="Euc`" class="">SRAM is low in density and rarer.</td><td id="^CeA" class="">DRAM is highly dense compared to SRAM.</td></tr><tr id="4c790d8e-e3c7-45cc-b9be-a6291f2185ec"><td id="a]vm" class="">Total Number of Transistors</td><td id="Euc`" class="">Since SRAM has a single block of memory, including six transistors becomes necessary.</td><td id="^CeA" class="">A single transistor can form a memory block with only a single transistor.</td></tr><tr id="7118f28d-de30-4c4e-a06c-9a8c40cda604"><td id="a]vm" class="">Design and Construction</td><td id="Euc`" class="">It is very complicated to construct and design SRAM. It is because it uses various types of transistors to implement its performance.</td><td id="^CeA" class="">The DRAM is comparatively easy to implement because it also has a simplistic design. The total number of transistors present in a memory module impacts the capacity of a DRAM. Thus, the DRAM module can be six times more capable than the SRAM module (that has the same number of transistors).</td></tr><tr id="d05e74fa-bef6-4c96-9d89-84547f36909f"><td id="a]vm" class="">Consumption of Power</td><td id="Euc`" class="">The principle that SRAM follows relates to the constant change of a current direction through the switches. It has no charges like the DRAM.</td><td id="^CeA" class="">The rate of power consumption is comparatively higher in DRAM as compared to SRAM.</td></tr><tr id="c3177f2f-bb2f-4363-8a31-cdb831bab457"><td id="a]vm" class="">Nature of Leaking Charge</td><td id="Euc`" class="">SRAM faces no issues of leakage of charge.</td><td id="^CeA" class="">The DRAM utilizes a capacitor that produces a leakage current. It makes DRAM dynamic. It’s possible because a dielectric current is present inside a capacitor. A dielectric separates the constructive plates. It does not serve as a perfect insulator- thus, DRAM requires a power refresh circuitry.</td></tr><tr id="31ce90f2-3b4c-4014-b8be-3b2a12022655"><td id="a]vm" class="">Simplicity</td><td id="Euc`" class="">The modules of SRAM are more straightforward when compared to the DRAM modules. One can develop easy-to-build interfaces for accessing the memory.</td><td id="^CeA" class="">DRAMs are very complex as compared to SRAMs.</td></tr><tr id="511da91a-ecd8-405b-aa1a-0d39699d63e0"><td id="a]vm" class="">Advantage</td><td id="Euc`" class="">Consumption of power is low, and the speed of access is fast.</td><td id="^CeA" class="">Manufacturing cost is low, and memory capacity is greater.</td></tr><tr id="16fde986-a7ed-4acb-9e3c-6f121bd6c3c2"><td id="a]vm" class="">Disadvantage</td><td id="Euc`" class="">Memory capacity is less, and manufacturing cost is fairly high.</td><td id="^CeA" class="">Power consumption is high, and access speed is slow.</td></tr></tbody></table><h1 id="81be52aa-1041-47ca-9bd6-5c5e2a3819f6" class=""><strong>Define throughput and speedup?</strong></h1><ol type="1" id="6475fb04-1353-45a5-8469-df855062b076" class="numbered-list" start="1"><li>Throughput: Throughput is a measure of the rate at which a system processes a workload. It is usually expressed as the number of tasks completed per unit of time, such as the number of transactions processed per second or the number of instructions executed per second. Throughput is an important metric for evaluating the performance of computer systems, as it indicates the overall efficiency of the system in handling a given workload.</li></ol><ol type="1" id="fd3c920d-935e-460e-8ba2-6432ece367dd" class="numbered-list" start="2"><li>Speedup: Speedup is a measure of how much faster a system can perform a task compared to a reference system. It is typically expressed as a ratio of the execution time on the reference system to the execution time on the system being evaluated. Speedup is a useful metric for comparing the performance of different systems and for evaluating the impact of hardware or software optimizations on system performance.</li></ol><p id="0cb9afde-c89b-4404-b225-afbf2bd99363" class="">For example, if a task takes 10 seconds to complete on a reference system, and it takes 5 seconds to complete on a new system, the speedup of the new system is 10/5 = 2. This means that the new system is 2 times faster than the reference system in completing the task.</p><p id="8ceaccfe-1529-4c43-9967-66b20f089612" class="">In general, the goal of performance optimization is to improve the throughput and speedup of a system, allowing it to handle a greater workload in less time. By measuring the throughput and speedup of a system, it is possible to evaluate the impact of performance optimizations and determine which optimizations are most effective in improving system performance.</p><h1 id="72f69345-a4a0-481a-b95b-0089387d60f0" class=""><strong>Define Hit, Miss and Hit-ratio?</strong></h1><ol type="1" id="93b039d5-0bb0-4d80-b84d-719d1a941198" class="numbered-list" start="1"><li>Hit: In computer memory management, a hit occurs when a requested data item is found in the cache memory. When a hit occurs, the requested data can be quickly retrieved from the cache, reducing the time required to access the data.</li></ol><ol type="1" id="72921dea-c3ea-4b6c-b4f0-a3da43facf68" class="numbered-list" start="2"><li>Miss: In computer memory management, a miss occurs when a requested data item is not found in the cache memory. When a miss occurs, the data must be retrieved from slower main memory, adding to the latency of accessing the data.</li></ol><ol type="1" id="0b612c18-5055-4943-a143-7b45037e3711" class="numbered-list" start="3"><li>Hit-ratio: The hit-ratio is the ratio of cache hits to the total number of cache accesses. It is a measure of the effectiveness of the cache in storing frequently used data items, and it can be used to evaluate the performance of a cache memory system.</li></ol><p id="7eb7c7af-b97a-4228-98a2-1af8064faa72" class="">For example, if a cache receives 100 access requests and 75 of them result in hits, the hit-ratio is 75/100 = 75%. A high hit-ratio indicates that the cache is effective in storing frequently used data items, reducing the number of misses and improving overall system performance. A low hit-ratio, on the other hand, indicates that the cache is not effectively storing frequently used data items, leading to a greater number of misses and lower system performance.</p><h1 id="02e4991a-d9d1-4c11-88bd-34c72fb377e3" class=""><strong>What is the USB?</strong></h1><p id="8223be6b-83d2-4e6b-ab10-06da35698f41" class="">USB (Universal Serial Bus) is a standard for connecting peripheral devices to a computer. It provides a simple and flexible way to connect devices such as keyboards, mice, printers, digital cameras, and external hard drives to a computer, as well as transfer data between the devices and the computer.</p><p id="2f08efcf-fb89-4b21-b723-17d0b1d7cfb9" class="">Some key features of USB include:</p><ol type="1" id="ad2c49fe-a362-4efd-9c3e-acbf255dcbe9" class="numbered-list" start="1"><li>Plug-and-play: USB devices can be plugged into a computer without requiring any additional software or drivers to be installed.</li></ol><ol type="1" id="3987a6f4-8b63-4373-ba73-3cb85f58acf7" class="numbered-list" start="2"><li>Hot-swappable: USB devices can be plugged in or unplugged while the computer is running, without causing any disruption or harm to the system or the device.</li></ol><ol type="1" id="21962f07-43df-4f80-88e9-c5f592243f54" class="numbered-list" start="3"><li>Speed: USB provides a high-speed data transfer rate, up to 5 Gbps in the latest version, USB 3.2, allowing large amounts of data to be transferred quickly and efficiently.</li></ol><ol type="1" id="7e83cd78-a0df-4a98-a7cc-3b96c5c33a26" class="numbered-list" start="4"><li>Power: USB provides power to connected devices, eliminating the need for external power supplies. This feature makes USB ideal for low-power devices such as mice and digital cameras.</li></ol><ol type="1" id="f88563e7-6d10-4a9f-a802-81d27f379532" class="numbered-list" start="5"><li>Compatibility: USB is an industry standard, supported by a wide range of operating systems, including Windows, macOS, and Linux.</li></ol><p id="75922487-5405-489a-9a73-a5733dbf7048" class="">In summary, USB is a versatile and widely-used interface that provides a convenient way to connect and transfer data between a wide range of peripheral devices and a computer.</p><h1 id="e389cb95-3409-4cbd-99e7-69e09ab3f791" class=""><strong>What is burst transfer?</strong></h1><p id="f3f9b9a1-c673-4e0f-bbeb-dddcf307b11b" class="">Burst transfer is a method of transferring multiple data items in a single transfer, as opposed to transferring each data item individually. The idea behind burst transfer is to increase the efficiency of data transfer by reducing the overhead associated with individual transfers.</p><p id="65207762-848d-4b15-96e7-7c6d9c6b83fb" class="">In computer systems, burst transfer is often used in memory and I/O subsystems to improve the performance of data transfer. For example, in a memory subsystem, a burst transfer may involve reading multiple words of data from memory in a single transfer, rather than reading each word individually. This reduces the number of memory accesses required to read the data, reducing the latency of the memory access and improving the overall performance of the system.</p><p id="40b7e53a-cc47-4087-8c02-9d9803cbbed4" class="">Similarly, in an I/O subsystem, a burst transfer may involve sending multiple packets of data in a single transfer, rather than sending each packet individually. This reduces the overhead associated with individual transfers, such as protocol overhead, and improves the overall efficiency of data transfer.</p><p id="97e6b06c-77ee-4d68-9d90-92e8459e5a19" class="">In summary, burst transfer is a technique for increasing the efficiency of data transfer by reducing the overhead associated with individual transfers. It is widely used in computer systems to improve the performance of memory and I/O subsystems.</p><h1 id="597a4319-bc3e-428d-87ad-b00d38b0bf46" class=""><strong>What is cycle stealing?</strong></h1><p id="a5c503c5-d545-4f94-9ea2-86b9a61acd9b" class="">Cycle stealing is a technique used in computer systems to improve the utilization of I/O (input/output) bandwidth. It is used to allow I/O devices to share the same bus used for data transfer with the CPU, without reducing the performance of the CPU.</p><p id="35435aaf-4ec7-4bd1-ad58-7e839470559b" class="">In cycle stealing, the CPU temporarily gives up control of the bus to an I/O device, allowing the device to transfer data on the bus during a CPU cycle. This allows the I/O device to transfer data to or from the system memory without having to wait for the CPU to finish its current operation. When the I/O transfer is complete, the CPU regains control of the bus and continues its operation.</p><p id="d8ede4ae-74e0-48f4-8ad2-33c90e1109f5" class="">Cycle stealing can improve the utilization of I/O bandwidth, as it allows I/O devices to transfer data to or from memory without having to wait for the CPU to finish its current operation. This reduces the latency of I/O operations and can improve the overall performance of the system.</p><p id="0bd6d349-98ae-453a-b735-57b6d814df7c" class="">However, cycle stealing can also have negative effects on the performance of the CPU, as it temporarily takes away control of the bus from the CPU, potentially slowing down the CPU&#x27;s operations. This trade-off between improving I/O performance and potentially reducing CPU performance makes cycle stealing a complex technique that requires careful consideration when used in computer systems.</p><h1 id="9a2ac2de-eb3c-4b66-9d0d-1a8bb2189ef8" class=""><strong>Draw the four segment pipelining?</strong></h1><figure id="63ebed56-5b25-452b-bed9-22f2b5e0f361" class="image"><a href="https://vishnusrivatsava.github.io/mids/coa/Short%20Answer%20Questions%20dcff684452ed413394b4c21d3543a8f3/Untitled%201.png"><img src="https://vishnusrivatsava.github.io/mids/coa/Short%20Answer%20Questions%20dcff684452ed413394b4c21d3543a8f3/Untitled%201.png"/></a></figure><h1 id="0d6f9354-f509-41c5-a9ad-4739bf7001bd" class=""><strong>Define the instruction stream and data stream?</strong></h1><p id="0b90f29f-8ff4-4f79-bf5e-56e1462bd7aa" class="">The instruction stream and data stream are fundamental concepts in computer architecture and refer to the flow of information within a computer system.</p><p id="17c318a8-1bfe-4c6d-9202-fae50396b540" class="">The instruction stream refers to the sequence of instructions that a computer program performs. These instructions are stored in memory and retrieved by the central processing unit (CPU) to execute the program. The instruction stream is essentially a series of commands that tell the computer what to do.</p><p id="c6567e2a-2afe-4160-833e-4a766734aab7" class="">The data stream refers to the flow of data that is processed by the computer program. Data can be input from external sources, such as a keyboard or file, or it can be stored in memory and retrieved as needed by the program. The data stream is essentially the information that the program uses to perform its functions.</p><p id="104a4c66-951d-4d96-afbd-72f0eb929fd0" class="">It&#x27;s important to note that both the instruction stream and data stream are processed by the CPU and can be stored in memory or other storage devices. The efficiency and speed of these streams directly impact the overall performance of a computer system.</p><p id="4f0266ec-37f5-4426-87b7-f43e2a2666ea" class="">
+</p></div></article></body></html>
