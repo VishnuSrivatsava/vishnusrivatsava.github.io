@@ -1,0 +1,679 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>SAQS</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="73bb9788-1493-4079-9b0b-5d4da26ed654" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/nasa_robert_stewart_spacewalk.jpg" style="object-position:center 40%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">💀</span></div><h1 class="page-title">SAQS</h1></header><div class="page-body"><h1 id="66dce041-867b-411e-83d1-7af40e2b9f25" class="">What is Partial Dependency?</h1><p id="a7e93a4d-5ea2-4dfe-ac9f-9251263e93c7" class="">Partial Dependency in database management systems refers to the relationship between a non-key attribute and a candidate key. It refers to the dependence of one non-key attribute on another non-key attribute in the absence of any other non-key attribute.</p><p id="0984887d-ca7a-4cc3-9439-cbe75ac6d30b" class="">In simpler terms, partial dependency is the dependence of one non-key attribute on another non-key attribute, and not on the primary key. This relationship can impact the normalization process in database design, and the goal is to eliminate partial dependencies to reach a higher normalization form.</p><p id="7569c51f-9b8f-4873-982c-726b9449a2bb" class="">For example, consider a table with three attributes: <code><strong>Student_ID</strong></code> (primary key), <code><strong>Name</strong></code>, and <code><strong>Department</strong></code>. If the <code><strong>Department</strong></code> attribute depends only on the <code><strong>Student_ID</strong></code> and not on the <code><strong>Name</strong></code> attribute, then there is no partial dependency between the <code><strong>Department</strong></code> and <code><strong>Name</strong></code> attributes. However, if the <code><strong>Department</strong></code> attribute depends on the <code><strong>Name</strong></code> attribute, then there is a partial dependency between the <code><strong>Department</strong></code> and <code><strong>Name</strong></code> attributes, which would need to be eliminated through normalization to reach a higher normalization form.</p><h1 id="ae14a4d7-3d6c-43a5-ab63-0d5915719e92" class="">How to achieve atomicity and durability</h1><p id="982a9b56-b66c-4f28-bea9-d70f579a0446" class="">Atomicity and durability are important database concepts that ensure the integrity and reliability of data. They are usually achieved through the use of transactions. A transaction is a unit of work that is either completed in its entirety or not executed at all.</p><p id="86719faf-f91c-4fca-8669-cb3858bdda8c" class="">Atomicity:
+A transaction is considered atomic if it is indivisible and irreducible, meaning that it cannot be divided into smaller parts or undone. This ensures that the database remains in a consistent state even in the event of a crash, power failure, or other unexpected error. To achieve atomicity, database systems use a commit protocol, which ensures that all changes made to the database during a transaction are permanent, or all changes are rolled back to the state before the transaction began.</p><p id="efb5725c-8bad-447c-8eb0-3575928880ff" class="">Durability:
+Durability is the ability of the database to persist changes even after a crash, power failure, or other error. To achieve durability, database systems write changes made during a transaction to a log file, which is stored on a separate, persistent storage device such as a disk or solid-state drive. In the event of a crash or other error, the database can be recovered from the log file and the database will have the same state as before the crash or error.</p><p id="157a4f49-3250-4f3e-af9b-bd2c44be0530" class="">In summary, to achieve atomicity and durability, a database system uses transactions and a commit protocol, and writes changes to a log file. This ensures that the database remains in a consistent state, and that changes made to the database are permanent and recoverable in the event of a crash or other error.</p><h1 id="d459dd5e-1b3b-4ad9-9e30-0402df7ec55e" class="">State diagram of transaction execution.</h1><figure id="0ee1d812-8d35-44df-8435-89dd5ffbdf3b" class="image"><a href="SAQS%2073bb9788149340799b0b5d4da26ed654/Untitled.png"><img style="width:743px" src="SAQS%2073bb9788149340799b0b5d4da26ed654/Untitled.png"/></a></figure><h1 id="3dcf700c-4587-4a6b-a971-c7dbef89793f" class="">Explain memory hierarchy according to access speed, cost and storage.</h1><figure id="f34dc202-47fa-48fa-afdb-69962c76303f" class="image"><a href="https://static.javatpoint.com/dbms/images/storage-system-in-dbms2.png"><img src="https://static.javatpoint.com/dbms/images/storage-system-in-dbms2.png"/></a></figure><p id="eaeecae1-3420-4f59-9835-b47548ed8656" class="">In the image, the higher levels are expensive but fast. On moving down, the cost per bit is decreasing, and the access time is increasing. Also, the storage media from the main memory to up represents the volatile nature, and below the main memory, all are non-volatile devices.</p><h1 id="a866d551-3eec-457d-a825-1608d07766fe" class="">Explain different types of storage devices.</h1><p id="de7353e5-304e-4132-8ef9-0bbaff9fc1eb" class="">For storing the data, there are different types of storage options available. These storage types differ from one another as per the speed and accessibility. There are the following types of storage devices used for storing the data:</p><ul id="787b5567-3268-4653-9057-859f41b8180a" class="bulleted-list"><li style="list-style-type:disc">Primary Storage</li></ul><ul id="02d689d4-d78a-4fe9-b099-ca50e3d4e59f" class="bulleted-list"><li style="list-style-type:disc">Secondary Storage</li></ul><ul id="276880d0-22d8-431c-94dd-7382fdce9320" class="bulleted-list"><li style="list-style-type:disc">Tertiary Storage</li></ul><figure id="24773ac7-490b-46b1-aa70-9d5e02206444" class="image"><a href="https://static.javatpoint.com/dbms/images/storage-system-in-dbms.png"><img src="https://static.javatpoint.com/dbms/images/storage-system-in-dbms.png"/></a></figure><h3 id="20525724-631d-4816-bdbf-3f92ad5d7448" class="">Primary Storage</h3><p id="0ffd8efe-2695-40a2-84b1-5cab3251bd1e" class="">It is the primary area that offers quick access to the stored data. We also know the primary storage as volatile storage. It is because this type of memory does not permanently store the data. As soon as the system leads to a power cut or a crash, the data also get lost. Main memory and cache are the types of primary storage.</p><ul id="7fe14fee-9266-4f99-acd8-72c87c4cba19" class="bulleted-list"><li style="list-style-type:disc"><strong>Main Memory:</strong> It is the one that is responsible for operating the data that is available by the storage medium. The main memory handles each instruction of a computer machine. This type of memory can store gigabytes of data on a system but is small enough to carry the entire database. At last, the main memory loses the whole content if the system shuts down because of power failure or other reasons.</li></ul><ol type="1" id="ff5969ff-9389-4d3e-892e-bac027d148dd" class="numbered-list" start="1"><li><strong>Cache:</strong> It is one of the costly storage media. On the other hand, it is the fastest one. A cache is a tiny storage media which is maintained by the computer hardware usually. While designing the algorithms and query processors for the data structures, the designers keep concern on the cache effects.</li></ol><h3 id="0427a422-c1b3-4586-9d15-f578bbda3e4b" class="">Secondary Storage</h3><p id="c7a14765-db31-461c-8a52-d62142d3745f" class="">Secondary storage is also called as Online storage. It is the storage area that allows the user to save and store data permanently. This type of memory does not lose the data due to any power failure or system crash. That&#x27;s why we also call it non-volatile storage.</p><p id="ba244823-6ff5-4afd-a97d-7ff578a80ed2" class="">There are some commonly described secondary storage media which are available in almost every type of computer system:</p><ul id="3e6ef773-11a5-42ca-833f-6e55b06acddc" class="bulleted-list"><li style="list-style-type:disc"><strong>Flash Memory:</strong> A flash memory stores data in USB (Universal Serial Bus) keys which are further plugged into the USB slots of a computer system. These USB keys help transfer data to a computer system, but it varies in size limits. Unlike the main memory, it is possible to get back the stored data which may be lost due to a power cut or other reasons. This type of memory storage is most commonly used in the server systems for caching the frequently used data. This leads the systems towards high performance and is capable of storing large amounts of databases than the main memory.</li></ul><ul id="88b3ae54-2ffe-4b84-bcf1-642db30d7f01" class="bulleted-list"><li style="list-style-type:disc"><strong>Magnetic Disk Storage:</strong> This type of storage media is also known as online storage media. A magnetic disk is used for storing the data for a long time. It is capable of storing an entire database. It is the responsibility of the computer system to make availability of the data from a disk to the main memory for further accessing. Also, if the system performs any operation over the data, the modified data should be written back to the disk. The tremendous capability of a magnetic disk is that it does not affect the data due to a system crash or failure, but a disk failure can easily ruin as well as destroy the stored data.</li></ul><h3 id="40ee1186-af83-4135-b836-67f3466d9cca" class="">Tertiary Storage</h3><p id="a18c410d-d4b7-45d7-9479-849e24ee62cf" class="">It is the storage type that is external from the computer system. It has the slowest speed. But it is capable of storing a large amount of data. It is also known as Offline storage. Tertiary storage is generally used for data backup. There are following tertiary storage devices available:</p><ul id="e918960c-5ff2-482f-8819-3e6f1f671127" class="bulleted-list"><li style="list-style-type:disc"><strong>Optical Storage:</strong> An optical storage can store megabytes or gigabytes of data. A Compact Disk (CD) can store 700 megabytes of data with a playtime of around 80 minutes. On the other hand, a Digital Video Disk or a DVD can store 4.7 or 8.5 gigabytes of data on each side of the disk.</li></ul><ul id="9718260a-97f9-4e69-97f6-1fda716a37ff" class="bulleted-list"><li style="list-style-type:disc"><strong>Tape Storage:</strong> It is the cheapest storage medium than disks. Generally, tapes are used for archiving or backing up the data. It provides slow access to data as it accesses data sequentially from the start. Thus, tape storage is also known as sequential-access storage. Disk storage is known as direct-access storage as we can directly access the data from any location on disk.</li></ul><h1 id="34e3a876-2181-4862-bf3b-acb9a05c6c14" class="">Write the compatibility matrix of locks.</h1><table id="8e195004-8069-431f-9b4c-09cd77381613" class="simple-table"><tbody><tr id="1ca63dd7-fc98-4d0b-889f-1e77b9d0585b"><td id="nGeI" class=""></td><td id="zDlh" class=""><strong>S</strong></td><td id="Up_U" class=""><strong>X</strong></td></tr><tr id="d2ed8e90-2c1f-462c-98c0-7394f0f16ab4"><td id="nGeI" class=""><strong>S</strong></td><td id="zDlh" class="">True</td><td id="Up_U" class="">False</td></tr><tr id="021538e8-a562-4d50-9719-ec652f9b24b9"><td id="nGeI" class=""><strong>X</strong></td><td id="zDlh" class="">False</td><td id="Up_U" class="">False</td></tr></tbody></table><p id="f8f5ddb9-4cba-4250-a765-f3640edc6511" class="">Here, only S and S are compatible.</p><p id="617e3ba8-245d-46ec-bc66-4dcd06d1be96" class="">This Compatibility function works as follows :</p><p id="e5aefe76-f13c-4ac9-b039-24f9fb44b7b9" class="">A and B represent some arbitrary lock modes.<strong>( A = S/X  and B = S/X)</strong>.</p><p id="b8f06e8d-040b-48ba-a35a-95442cf1b1a5" class="">Let’s say, a lock of mode <strong>A </strong>is requested by transaction <strong>Ti </strong>on item <strong>Q </strong>on which Transaction <strong>Tj (Ti  </strong><strong>≠</strong><strong>   Tj)</strong> currently holds a lock of mode <strong>B</strong>.</p><p id="a8f07649-39d8-46cc-a3d6-b7a2d1b394b4" class="">If transaction <strong>Ti </strong>can be granted a lock on <strong>Q </strong>immediately, even though there is a lock on mode <strong>B</strong>, then we say mode <strong>A </strong>is <strong>compatible</strong> with mode<strong> B</strong>.</p><p id="8fdaf289-e628-4536-a602-d0fe1286b509" class=""><strong>Example-1: </strong>A and B are two accounts that are accessed by transactions T1 and T2.</p><p id="16670e37-5834-4632-850d-2d25b4cba79d" class=""><strong>Transaction T1 :</strong>              lock-X(B) ;</p><p id="3757aad8-098b-44e7-9e32-aa0f767877e1" class="">read (B) ;</p><p id="9dd60f45-149f-4132-b930-5fafddabeab1" class="">B = B – 50 ;</p><p id="ac261b2c-841b-4f7e-a109-a27ebba8e624" class="">write (B) ;</p><p id="2c9a1c88-a1c8-4e79-ac62-acaea12319e7" class="">unlock (B) ;</p><p id="74ce0bbf-2ad2-41fd-9989-93af18126793" class="">lock-X(A) ;</p><p id="97a3a044-26e7-4902-83e3-f946add74c89" class="">read (A) ;</p><p id="4b515fc6-a19d-4895-9d0f-72a14e0014b7" class="">A = A + 50 ;</p><p id="62fc511f-40ad-46f2-b323-3e5d9598cc9a" class="">write (A) ;</p><p id="7e796f80-0d65-4f1d-9438-d618e0e8a56e" class="">unlock (A) ;</p><p id="fd94c274-f4f4-49f5-9b76-c0da550bd8eb" class="">Here, in this transaction <strong>T1 </strong>transfers Rs. 50 from Account-B to Account-A. And the total amount of money present in accounts A and B is displayed by Transaction T2.</p><p id="f36b2315-1feb-4f95-aea0-1d4c1486ed6c" class="">i.e., A + B.</p><p id="da806d4c-e813-457e-b9e0-b6d4822bb44b" class=""><strong>Transaction T2 :  </strong>                lock-S(A) ;</p><p id="fc0ebe16-3f36-4713-9435-af2dc093c7e9" class="">read (A) ;</p><p id="3127b381-3cc9-44aa-8514-a5e678e39603" class="">unlock (A) ;</p><p id="9251f221-e4d7-460c-bcfe-2421614b5ec2" class="">lock-S(B) ;</p><p id="28c804d1-6fdd-4535-8400-000b18acdddc" class="">read (B) ;</p><p id="243499e5-2405-4e4a-a887-c2fe0e3f426b" class="">unlock (B) ;</p><p id="2f550b0f-d55c-4f4b-9123-f1318d3bd7ab" class="">display ( A + B ) ;</p><p id="87628a7a-0b4a-4ce8-9467-c2e0d3d2cce9" class=""><strong>Schedule-1 :</strong></p><table id="a12b5d82-69e2-4be8-a077-eea85a58cffb" class="simple-table"><tbody><tr id="b78b781e-83cc-4b75-bcbd-7e763cb9f45d"><td id="_DAU" class=""><strong>T1</strong></td><td id="_PL}" class=""><strong>T2</strong></td><td id="rckp" class=""><strong>Concurrency Control Manager</strong></td></tr><tr id="46791031-d6f0-4cf4-882f-347f7a6848a2"><td id="_DAU" class="">Lock-X (B)</td><td id="_PL}" class=""></td><td id="rckp" class=""></td></tr><tr id="52299a71-d3da-4c4d-9639-93d6874de727"><td id="_DAU" class=""></td><td id="_PL}" class=""></td><td id="rckp" class="">grant-X (B, T1)</td></tr><tr id="9cee8359-3740-4d54-9742-b0b7b4fe4d99"><td id="_DAU" class="">read (B) ;
+B = B – 50 ;
+write (B) ;
+unlock (B) ;</td><td id="_PL}" class=""></td><td id="rckp" class=""></td></tr><tr id="a8b5d23b-0ff4-4c2a-9eae-72f6fb1a7614"><td id="_DAU" class=""></td><td id="_PL}" class="">lock-S (A)</td><td id="rckp" class=""></td></tr><tr id="91ca42fb-ee14-445c-a0fc-4e39ec020803"><td id="_DAU" class=""></td><td id="_PL}" class=""></td><td id="rckp" class="">grant-S (A, T2)</td></tr><tr id="32c9af96-faca-4e70-9419-4a4a44ea0f48"><td id="_DAU" class=""></td><td id="_PL}" class="">read(A)                                           unlock(A)                                           lock-S (B)</td><td id="rckp" class=""></td></tr><tr id="0687219e-6f93-4cf9-85e3-e29bde6d958f"><td id="_DAU" class=""></td><td id="_PL}" class=""></td><td id="rckp" class="">grant-S (B, T2)</td></tr><tr id="e090074b-b7ce-4137-b669-f46ab33758d2"><td id="_DAU" class=""></td><td id="_PL}" class="">read(B)                                               unlock(B)                                   display (A + B)</td><td id="rckp" class=""></td></tr><tr id="28b71174-c85f-42cc-80fa-1afff8b644fa"><td id="_DAU" class="">lock-X (A)</td><td id="_PL}" class=""></td><td id="rckp" class=""></td></tr><tr id="1b62782e-385d-462f-9784-b06b0db36b1b"><td id="_DAU" class=""></td><td id="_PL}" class=""></td><td id="rckp" class="">grant-X(A, T1)</td></tr><tr id="59ce62d1-b0ce-44c4-85bb-ba37773e0e23"><td id="_DAU" class=""><strong>read(A)                 A = A – 50</strong><strong>
+</strong><strong>write (A)</strong><strong>
+</strong><strong>unlock (A)   </strong><strong></strong></td><td id="_PL}" class=""></td><td id="rckp" class=""></td></tr></tbody></table><h1 id="c7953ae1-a7c9-44ab-8836-d1f01086eb5d" class="">Properties of transaction.</h1><p id="b0b0ceb4-3455-4a8a-a97d-fdae20c1ce22" class="">In database management systems, a transaction is a sequence of one or more database operations that are executed as a single unit of work. Transactions are an important concept in databases because they allow multiple operations to be executed as a single, atomic action, ensuring that the database remains in a consistent state even if some of the operations fail. Transactions have several properties, including:</p><ol type="1" id="4f493127-45b8-453f-b948-1bb4e5c25995" class="numbered-list" start="1"><li>Atomicity: This property ensures that a transaction is treated as a single, indivisible unit of work. Either all of the operations within a transaction are completed, or none of them are.</li></ol><ol type="1" id="4cd50f13-f045-4947-81b7-ab065ba2c1ae" class="numbered-list" start="2"><li>Consistency: A transaction must bring the database from one consistent state to another consistent state. If any of the operations within a transaction would violate the integrity constraints of the database, the entire transaction is rolled back, leaving the database in its original state.</li></ol><ol type="1" id="6d8991ca-90c3-4ed1-990c-599a07885b6a" class="numbered-list" start="3"><li>Isolation: Transactions should execute in isolation from each other, meaning that the operations within one transaction should not affect the operations within another transaction. This property is important for ensuring the consistency and integrity of the data in the database.</li></ol><ol type="1" id="e3f22650-b9cf-428f-bbf9-67e0a4b8660d" class="numbered-list" start="4"><li>Durability: Once a transaction is committed, its effects should be permanent, even in the event of a system failure or crash. This is typically achieved through the use of a write-ahead log or other similar mechanism.</li></ol><ol type="1" id="9aed5001-0b30-4ca8-af30-ed3149befaca" class="numbered-list" start="5"><li>Serializability: Transactions should be executed in a way that is consistent with a serial execution of the same set of transactions, meaning that the result of executing the transactions in a different order should be the same as if they were executed in a single, serial order.</li></ol><h1 id="a88f5c53-5673-4300-9088-36130d47ad65" class="">Explain two phases in 2 Phase Locking Protocol.</h1><p id="240445e1-8ffa-4f6d-abe1-5a9fc24cb387" class="">Locking and unlocking of the database should be done in such a way that there is no inconsistency, deadlock and no starvation.</p><h2 id="49410086-c589-4406-adea-4e7022c6ab60" class=""><strong>2PL locking protocol</strong></h2><p id="3a63b17d-095b-4ea1-a46c-6330e6e74e7b" class="">Every transaction will lock and unlock the data item in two different phases.</p><ul id="79fd384a-47e1-419c-8923-37996e7b433a" class="bulleted-list"><li style="list-style-type:disc"><strong>Growing Phase</strong> − All the locks are issued in this phase. No locks are released, after all changes to data-items are committed and then the second phase (shrinking phase) starts.</li></ul><ul id="8dd9c8b2-f16c-45ec-b28a-0f78445b8cbc" class="bulleted-list"><li style="list-style-type:disc"><strong>Shrinking phase</strong> − No locks are issued in this phase, all the changes to data-items are noted (stored) and then locks are released.</li></ul><p id="a565cf42-a029-4825-9f52-22622db2e3a7" class="">The 2PL locking protocol is represented diagrammatically as follows −</p><figure id="917e8870-cdda-4ca2-8a74-5c95c0ffa8d7" class="image"><a href="https://www.tutorialspoint.com/assets/questions/media/53993/protocol.jpg"><img src="https://www.tutorialspoint.com/assets/questions/media/53993/protocol.jpg"/></a></figure><p id="4957e98b-e2dc-4a8d-ad81-0f931ca3aa49" class="">In the growing phase transaction reaches a point where all the locks it may need has been acquired. This point is called LOCK POINT.</p><p id="3631a851-e428-43a2-b9dc-251615c718a8" class="">After the lock point has been reached, the transaction enters a shrinking phase.</p><h2 id="ec4e31d6-d296-4afd-baed-38a16c92f05e" class=""><strong>Types</strong></h2><p id="34067ceb-39bb-40d7-be61-c241ce6968e2" class="">Two phase locking is of two types −</p><h2 id="423b7156-9a63-48c1-9c11-c50c4faad638" class=""><strong>Strict two phase locking protocol</strong></h2><p id="638bc7a9-b3f0-4737-846c-d929febe4d39" class="">A transaction can release a shared lock after the lock point, but it cannot release any exclusive lock until the transaction commits. This protocol creates a cascade less schedule.</p><p id="c9904889-0bba-40ea-b3ea-3c2a719d4bf9" class="">Cascading schedule: In this schedule one transaction is dependent on another transaction. So if one has to rollback then the other has to rollback.</p><h2 id="9c715803-f30e-4921-a4be-c81082cde7c7" class=""><strong>Rigorous two phase locking protocol</strong></h2><p id="88fea728-3ba1-40bc-9e23-a070005b3afc" class="">A transaction cannot release any lock either shared or exclusive until it commits.</p><p id="ddaa6086-7319-46a2-a1fe-8533775b95a3" class="">The 2PL protocol guarantees serializability, but cannot guarantee that deadlock will not happen.</p><h2 id="d8ff8db4-dda8-4a7e-bdf0-e31e723df16b" class=""><strong>Example</strong></h2><p id="6f4fa58a-381a-42c0-bbd3-d8a65c953937" class="">Let T1 and T2 are two transactions.</p><p id="085e358c-5983-4336-825d-5f6bbaa2f922" class="">T1=A+B and T2=B+A</p><table id="40494790-a1d1-44ed-82c8-d6410ae8feb8" class="simple-table"><tbody><tr id="d0b1f79d-fc76-485f-8cb0-736e9ae4ddcc"><td id="l{pN" class="">T1</td><td id="aKlD" class="">T2</td></tr><tr id="e78327fb-5f6f-45f0-a818-5ae473f82cd3"><td id="l{pN" class="">Lock-X(A)</td><td id="aKlD" class="">Lock-X(B)</td></tr><tr id="058068a6-848e-4ae0-ab3b-bac1ab6c1b91"><td id="l{pN" class="">Read A;</td><td id="aKlD" class="">Read B;</td></tr><tr id="e55af2a8-ee9d-4d9d-a12e-08c2a3a09005"><td id="l{pN" class="">Lock-X(B)</td><td id="aKlD" class="">Lock-X(A)</td></tr></tbody></table><p id="8ab652e7-a0a5-4896-a968-8e5543e9a481" class="">Here,</p><p id="870bbf46-8877-4518-8169-8cc15b510ddf" class="">Lock-X(B) : Cannot execute Lock-X(B) since B is locked by T2.</p><p id="280209de-d224-4c3f-9002-193079754e69" class="">Lock-X(A) : Cannot execute Lock-X(A) since A is locked by T1.</p><p id="3959e530-66a9-470b-94ea-6cacadbaa64d" class="">In the above situation T1 waits for B and T2 waits for A. The waiting time never ends. Both the transaction cannot proceed further at least any one releases the lock voluntarily. This situation is called deadlock.</p><p id="86625bd8-393f-4dea-a595-2eafb6762d78" class="">The wait for graph is as follows −</p><figure id="58a54383-a898-439f-9c71-37b4e0b8cddd" class="image"><a href="https://www.tutorialspoint.com/assets/questions/media/53993/graph.jpg"><img src="https://www.tutorialspoint.com/assets/questions/media/53993/graph.jpg"/></a></figure><p id="fb8471ff-73ab-40e1-bd88-839dc577b97a" class="">Wait for graph: It is used in the deadlock detection method, creating a node for each transaction, creating an edge Ti to Tj, if Ti is waiting to lock an item locked by Tj. A cycle in WFG indicates a deadlock has occurred. WFG is created at regular intervals.</p><h1 id="3343e9a3-776f-41ee-a951-1963736e1808" class="">Different types of Indexes.</h1><p id="0af0f1c5-414b-4a86-9d68-a30f6998c69f" class="">
+</p><figure id="9d3604c8-9a7f-44a4-9f85-45a470443517" class="image"><a href="https://static.javatpoint.com/dbms/images/dbms-indexing-in-dbms_2.png"><img src="https://static.javatpoint.com/dbms/images/dbms-indexing-in-dbms_2.png"/></a></figure><h2 id="139b3368-d1d3-471e-8100-0839d2f91bd2" class="">Ordered indices</h2><p id="c10cfe5a-1395-4c80-a2bc-d34fb870d348" class="">The indices are usually sorted to make searching faster. The indices which are sorted are known as ordered indices.</p><p id="75f4d341-eb64-4707-be8d-09cc46a51cfe" class=""><strong>Example</strong>: Suppose we have an employee table with thousands of record and each of which is 10 bytes long. If their IDs start with 1, 2, 3....and so on and we have to search student with ID-543.</p><ul id="3aa037b1-8027-4b6a-b657-a7648d36f21a" class="bulleted-list"><li style="list-style-type:disc">In the case of a database with no index, we have to search the disk block from starting till it reaches 543. The DBMS will read the record after reading 543*10=5430 bytes.</li></ul><ul id="3ca0ae8e-a4ee-41cb-b0f6-445e4d70d911" class="bulleted-list"><li style="list-style-type:disc">In the case of an index, we will search using indexes and the DBMS will read the record after reading 542*2= 1084 bytes which are very less compared to the previous case.</li></ul><h2 id="1ec49d35-30f3-4767-9d9e-b70905212932" class="">Primary Index</h2><ul id="d75e9fb5-ec74-46f9-bb3c-acc8458c3920" class="bulleted-list"><li style="list-style-type:disc">If the index is created on the basis of the primary key of the table, then it is known as primary indexing. These primary keys are unique to each record and contain 1:1 relation between the records.</li></ul><ul id="1bc81789-7e4f-4139-9e2f-25d8b64d9c04" class="bulleted-list"><li style="list-style-type:disc">As primary keys are stored in sorted order, the performance of the searching operation is quite efficient.</li></ul><ul id="57afe7e1-3fdb-4ebf-b1a8-52bebe0c85ac" class="bulleted-list"><li style="list-style-type:disc">The primary index can be classified into two types: Dense index and Sparse index.</li></ul><h2 id="01fef1a6-f8a6-4fb1-83dd-c42460e4093e" class="">Dense index</h2><ul id="ddc87543-7f73-4e2c-a469-64868e422ca2" class="bulleted-list"><li style="list-style-type:disc">The dense index contains an index record for every search key value in the data file. It makes searching faster.</li></ul><ul id="5332e917-748a-4da0-898d-064fe2389563" class="bulleted-list"><li style="list-style-type:disc">In this, the number of records in the index table is same as the number of records in the main table.</li></ul><ul id="cee04110-64f3-45d2-8ef6-0536eb826914" class="bulleted-list"><li style="list-style-type:disc">It needs more space to store index record itself. The index records have the search key and a pointer to the actual record on the disk.</li></ul><figure id="2c5ae4af-9c28-4739-85c5-d0b59f2cadaa" class="image"><a href="https://static.javatpoint.com/dbms/images/dbms-indexing-in-dbms_3.png"><img src="https://static.javatpoint.com/dbms/images/dbms-indexing-in-dbms_3.png"/></a></figure><h2 id="5ecd1b39-8a9b-4242-9780-2cc2a36f319d" class="">Sparse index</h2><ul id="6d6e88f5-27fa-4ae8-8d04-b4f5388aa5b1" class="bulleted-list"><li style="list-style-type:disc">In the data file, index record appears only for a few items. Each item points to a block.</li></ul><ul id="0d243bee-69b8-4bfb-96d6-7a2051f09ccf" class="bulleted-list"><li style="list-style-type:disc">In this, instead of pointing to each record in the main table, the index points to the records in the main table in a gap.</li></ul><figure id="b14dd9ff-d505-46d4-9952-77bdeaa4ce4e" class="image"><a href="https://static.javatpoint.com/dbms/images/dbms-indexing-in-dbms_4.png"><img src="https://static.javatpoint.com/dbms/images/dbms-indexing-in-dbms_4.png"/></a></figure><h2 id="8ce4e8a3-539c-4864-a377-90f9c1513906" class="">Clustering Index</h2><ul id="4b3dc1da-b2bf-4c99-ac06-1811295c8bcf" class="bulleted-list"><li style="list-style-type:disc">A clustered index can be defined as an ordered data file. Sometimes the index is created on non-primary key columns which may not be unique for each record.</li></ul><ul id="b9e6ee01-b536-4ab6-838e-21a861e6d905" class="bulleted-list"><li style="list-style-type:disc">In this case, to identify the record faster, we will group two or more columns to get the unique value and create index out of them. This method is called a clustering index.</li></ul><ul id="e7047d2d-d3a4-4f33-93f9-1ea7ee0aafb4" class="bulleted-list"><li style="list-style-type:disc">The records which have similar characteristics are grouped, and indexes are created for these group.</li></ul><p id="65d51a93-12a9-4587-9f2a-39d0007e58e3" class=""><strong>Example</strong>: suppose a company contains several employees in each department. Suppose we use a clustering index, where all employees which belong to the same Dept_ID are considered within a single cluster, and index pointers point to the cluster as a whole. Here Dept_Id is a non-unique key.</p><figure id="490d3bec-bd34-4502-ba12-bf2ab652e8bf" class="image"><a href="https://static.javatpoint.com/dbms/images/dbms-indexing-in-dbms_5.png"><img src="https://static.javatpoint.com/dbms/images/dbms-indexing-in-dbms_5.png"/></a></figure><p id="fec5e22f-bddd-46c6-b7ce-e2c7f6b94af7" class="">The previous schema is little confusing because one disk block is shared by records which belong to the different cluster. If we use separate disk block for separate clusters, then it is called better technique.</p><figure id="1f0cfa8b-ca30-4cb4-b39f-d217c6cfee63" class="image"><a href="https://static.javatpoint.com/dbms/images/dbms-indexing-in-dbms_6.png"><img src="https://static.javatpoint.com/dbms/images/dbms-indexing-in-dbms_6.png"/></a></figure><h2 id="342b8ce3-6203-457c-a3e4-eaa4c14eb0e8" class="">Secondary Index</h2><p id="44991daa-d092-4cf2-a65f-3a34e109d08b" class="">In the sparse indexing, as the size of the table grows, the size of mapping also grows. These mappings are usually kept in the primary memory so that address fetch should be faster. Then the secondary memory searches the actual data based on the address got from mapping. If the mapping size grows then fetching the address itself becomes slower. In this case, the sparse index will not be efficient. To overcome this problem, secondary indexing is introduced.</p><p id="4db2e44f-bdd3-47d5-ae22-b92712135071" class="">In secondary indexing, to reduce the size of mapping, another level of indexing is introduced. In this method, the huge range for the columns is selected initially so that the mapping size of the first level becomes small. Then each range is further divided into smaller ranges. The mapping of the first level is stored in the primary memory, so that address fetch is faster. The mapping of the second level and actual data are stored in the secondary memory (hard disk).</p><figure id="bccfad0c-be65-4d1d-8622-ba56c419b291" class="image"><a href="https://static.javatpoint.com/dbms/images/dbms-indexing-in-dbms_7.png"><img src="https://static.javatpoint.com/dbms/images/dbms-indexing-in-dbms_7.png"/></a></figure><p id="a6cfd881-9b15-4c48-8b3a-dbc0b587201d" class=""><strong>For example:</strong></p><ul id="0f7a6df9-8703-4b5f-92c6-bfa9da1a2eeb" class="bulleted-list"><li style="list-style-type:disc">If you want to find the record of roll 111 in the diagram, then it will search the highest entry which is smaller than or equal to 111 in the first level index. It will get 100 at this level.</li></ul><ul id="84276202-018f-454b-840f-4dd89e576016" class="bulleted-list"><li style="list-style-type:disc">Then in the second index level, again it does max (111) &lt;= 111 and gets 110. Now using the address 110, it goes to the data block and starts searching each record till it gets 111.</li></ul><ul id="58349c94-de63-44e1-a828-004c46b64f31" class="bulleted-list"><li style="list-style-type:disc">This is how a search is performed in this method. Inserting, updating or deleting is also done in the same manner.</li></ul><p id="a493b55f-0f84-4619-87b1-1edf776ef2fb" class="">
+</p><h1 id="a429ad0c-a6f4-4020-86d8-32030c11e13f" class="">What is Transitive dependency.</h1><p id="cad6bd80-b058-4e0c-87d1-8e52dede8031" class="">Transitive dependency is a type of functional dependency in database management systems. It occurs when a functional dependency between two attributes can be inferred from other functional dependencies in the system.</p><p id="9c7ac197-3910-493d-ba88-a2c24e605814" class="">For example, consider a table with three attributes: A, B, and C. If there is a functional dependency between A and B (A -&gt; B) and another functional dependency between B and C (B -&gt; C), then there is a transitive dependency between A and C (A -&gt; C). This means that the value of attribute C can be determined by the value of attribute A, even though there is no direct functional dependency between A and C.</p><p id="b8798340-1c5e-4b68-b0b2-cad4f09dc599" class="">Transitive dependencies can lead to redundancy and data inconsistencies in a database, as changes to one attribute can result in unintended changes to other attributes that depend on it transitively. To avoid these problems, database designers use normalization techniques to eliminate transitive dependencies and ensure that data is stored in a logically correct and consistent way.</p><p id="368fea9b-b366-4490-bbfd-a65fff5243ae" class="">
+</p></div></article></body></html>

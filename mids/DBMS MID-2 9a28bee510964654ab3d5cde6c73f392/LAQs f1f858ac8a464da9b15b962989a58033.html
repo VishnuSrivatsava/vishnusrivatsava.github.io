@@ -1,0 +1,670 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>LAQs</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="f1f858ac-8a46-4da9-b15b-962989a58033" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/woodcuts_sekka_1.jpg" style="object-position:center 9.999999999999998%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">😃</span></div><h1 class="page-title">LAQs</h1></header><div class="page-body"><h1 id="5322b4c9-4c5c-4e07-8587-c44d6c698d31" class="">Explain about properties of functional dependencies.</h1><p id="08efd3a5-1b38-4578-94e9-f143a6912b91" class="">Functional dependencies are a fundamental concept in database design and relational theory. They describe the relationships between attributes in a relation (or table) in a database. A functional dependency can be thought of as a constraint that specifies the relationship between attributes in a relation. The following are the key properties of functional dependencies:</p><ol type="1" id="939986f6-6b7e-4def-8153-6a91eb9cdca9" class="numbered-list" start="1"><li>Reflexivity: A functional dependency X → Y is considered reflexive if X is a subset of Y. In other words, if X is equal to Y, then the functional dependency is reflexive.</li></ol><ol type="1" id="a2ddc3cf-5e0e-4405-b52f-be2a470640d7" class="numbered-list" start="2"><li>Augmentation: If X → Y holds, then XZ → YZ holds for any set of attributes Z. This means that if a functional dependency exists between two sets of attributes X and Y, then it can be extended to any set that contains those attributes.</li></ol><ol type="1" id="5aa843ec-4fd0-43a4-8bc3-cd1a0b045428" class="numbered-list" start="3"><li>Transitivity: If X → Y and Y → Z hold, then X → Z holds. This means that if there is a chain of functional dependencies between three sets of attributes X, Y, and Z, then the functional dependency can be transitively inferred from X to Z.</li></ol><ol type="1" id="f226538b-2f75-4552-8ecf-b24c6273175c" class="numbered-list" start="4"><li>Anti-reflexivity: X cannot functionally determine X. In other words, a functional dependency cannot exist between a set of attributes and itself.</li></ol><ol type="1" id="46e07ba9-947b-4198-b58a-63c57d5171ef" class="numbered-list" start="5"><li>Non-redundancy: If X → Y holds, then XZ → YZ holds, where Z is a subset of attributes in the relation. This means that a functional dependency cannot be redundant or duplicated by another functional dependency between two larger sets of attributes.</li></ol><p id="80da10c1-a947-4f98-9cfb-2b740c42f660" class="">These properties of functional dependencies are used to ensure the integrity and consistency of data in a relational database, and are a crucial component of normalization in database design.</p><h1 id="0a4f64f7-fb80-4963-8726-f8a1c4a9ff8b" class="">What is Normalization and explain about 1NF, 2NF, 3NF.</h1><p id="6b4a151d-9f69-4b44-9116-2a89cd353b72" class="">Normalization is a database design technique that helps to eliminate redundancy, improve data integrity and reduce the complexity of relational databases. The process of normalization involves dividing a database into two or more tables and defining relationships between the tables.</p><p id="d4293466-38ed-4989-af76-9941d5ec942c" class="">The normalization process is generally carried out in a series of stages, each of which results in a more normalized or structured database. The stages of normalization are referred to as normal forms, with each normal form having a specific set of rules and requirements.</p><p id="3d835ffc-4bb3-456c-aeaa-84ff4062770a" class="">1NF (First Normal Form): In 1NF, each column of a table must contain atomic values, which means that each value must be indivisible. This means that no repeating groups or arrays are allowed. Each column in the table must have a unique name, and each row must be unique.</p><p id="2d5b03c8-2e4a-4d9c-812c-34c228796a7b" class="">2NF (Second Normal Form): A table is in 2NF if it is already in 1NF and every non-key attribute is fully dependent on the primary key. In other words, no partial dependencies are allowed.</p><p id="e5b78465-75f6-4709-962e-2a2c5028a092" class="">3NF (Third Normal Form): A table is in 3NF if it is already in 2NF and no transitive dependencies exist. This means that all the non-key columns are directly dependent on the primary key, and not on any other non-key column.</p><p id="bbb34359-2328-45b3-8c9d-2c381e06bf9a" class="">It&#x27;s important to note that normalization is not always necessary or the best solution for every database. It depends on the specific requirements of each database and the trade-off between data integrity, performance, and the complexity of the design.</p><h1 id="0ddba02c-766c-4dcd-8353-ae739f3ecbde" class="">Explain about lossless join decomposition and Dependency preserving decomposition.</h1><p id="cc88a308-365d-49ae-a9a1-054279e3f362" class="">Decomposition of a relation is done when a relation in relational model is not in appropriate normal form. Relation R is decomposed into two or more relations if decomposition is lossless join as well as dependency preserving.</p><p id="8aa5d307-ab8c-40dc-b979-3f85676b2fef" class=""><strong>Lossless Join Decomposition</strong></p><p id="e8c31f11-c539-4cf9-a8d4-8d836a028712" class="">If we decompose a relation R into relations R1 and R2,</p><ul id="4368e77b-1e21-41da-9793-eb1549713107" class="bulleted-list"><li style="list-style-type:disc">Decomposition is lossy if R1 ⋈ R2 ⊃ R</li></ul><ul id="1fe1df73-2504-4727-8de3-8c4a25b21aa1" class="bulleted-list"><li style="list-style-type:disc">Decomposition is lossless if R1 ⋈ R2 = R</li></ul><p id="1cccb30c-5401-4e99-875e-126d05a37ac9" class=""><strong>To check for lossless join decomposition using FD set, following conditions must hold:</strong></p><ol type="1" id="4c3e0777-eb96-4c23-81c9-ab503d40259a" class="numbered-list" start="1"><li>Union of Attributes of R1 and R2 must be equal to attribute of R. Each attribute of R must be either in R1 or in R2.<pre id="9eef338f-7035-423e-b3b7-250b455b155a" class="code code-wrap"><code> Att(R1) U Att(R2) = Att(R)</code></pre></li></ol><ol type="1" id="e3b7754c-15a0-417d-8d33-cc6860f9ef6c" class="numbered-list" start="2"><li>Intersection of Attributes of R1 and R2 must not be NULL.<pre id="d3f98a0d-2672-4430-bd64-96ec3cf177e4" class="code code-wrap"><code> Att(R1) ∩ Att(R2) ≠ Φ</code></pre></li></ol><ol type="1" id="c345ba79-da6b-426b-83c3-fb322f6ce2a0" class="numbered-list" start="3"><li>Common attribute must be a key for at least one relation (R1 or R2)<pre id="0e0d326a-14fc-454c-98c7-ba8a972039b9" class="code code-wrap"><code> Att(R1) ∩ Att(R2) -&gt; Att(R1) or Att(R1) ∩ Att(R2) -&gt; Att(R2)</code></pre></li></ol><p id="4c90abc2-bc24-4ae7-bc1a-4ebfeecbf640" class="">For Example, A relation R (A, B, C, D) with FD set{A-&gt;BC} is decomposed into R1(ABC) and R2(AD) which is a lossless join decomposition as:</p><ol type="1" id="45695be8-9619-4d1f-be16-2b3624435d3a" class="numbered-list" start="1"><li>First condition holds true as Att(R1) U Att(R2) = (ABC) U (AD) = (ABCD) = Att(R).</li></ol><ol type="1" id="6cc35977-1ea5-41e7-ba21-16a4b7579258" class="numbered-list" start="2"><li>Second condition holds true as Att(R1) ∩ Att(R2) = (ABC) ∩ (AD) ≠ Φ</li></ol><ol type="1" id="87faec8d-6124-4d5e-be8a-5272b818c724" class="numbered-list" start="3"><li>Third condition holds true as Att(R1) ∩ Att(R2) = A is a key of R1(ABC) because A-&gt;BC is given.</li></ol><p id="ec9e9c46-5d12-4521-893b-c6a65350e063" class=""><strong>Dependency Preserving Decomposition</strong></p><p id="ab37329a-757c-4c09-832a-d82fddad745e" class="">If we decompose a relation R into relations R1 and R2, All dependencies of R either must be a part of R1 or R2 or must be derivable from combination of FD’s of R1 and R2.For Example, A relation R (A, B, C, D) with FD set{A-&gt;BC} is decomposed into R1(ABC) and R2(AD) which is dependency preserving because FD A-&gt;BC is a part of R1(ABC).</p><h1 id="bdab7f63-2ad6-49fc-be4d-bc83c9f54f24" class="">Explain about BCNF, 4NF and 5NF.</h1><h3 id="8378ec79-df70-4c53-9561-b92e9ac5d244" class=""><strong>What is determinant?</strong></h3><p id="1280757e-ec0f-4077-bf6f-766fa42109a3" class="">We know that if B is functionally dependent on A, that is, A functionally determines B then in such case A is called determinant.</p><h3 id="9b083c5e-d608-4bb4-add1-c9cb11038113" class=""><strong>BCNF</strong></h3><p id="f542614c-de2b-482b-90da-3a12e7c0a9b9" class="">A table is in BCNF form if the only determinants in the table are the candidate keys. It means every column, on which some other column is fully functionally dependent, is also a candidate for the primary key of the table.</p><h3 id="bc63d651-f73e-4596-b2b7-dd570d2915a1" class=""><strong>Fourth Normal Form</strong></h3><p id="2b803567-77d3-49c5-889f-fb98562d5ddd" class="">A table is in the fourth normal form (4NF) if:</p><ul id="5037f283-3f81-44f9-b3a1-21fe37fa938a" class="bulleted-list"><li style="list-style-type:disc">It is in BCNF.</li></ul><ul id="a969408d-bb1a-44e2-8a25-a3a9a335aeda" class="bulleted-list"><li style="list-style-type:disc">It does not have any independent multi-valued parts of the primary key.</li></ul><p id="43e5c27d-3936-4c04-9a4c-1ef5e5ef53f0" class="">Let’s say we have table Teacher which gives information about:</p><ol type="1" id="48b68642-5dce-4f8a-bc40-a4b7f6cb1a52" class="numbered-list" start="1"><li>A teacher can teach many teachers.</li></ol><ol type="1" id="b879548b-c4f4-4559-8f94-83d3c96b2f1a" class="numbered-list" start="2"><li>A teacher may know many languages.</li></ol><p id="2cb0700f-bca8-4112-8cf6-76eeda504852" class="">Table: <strong>Teacher</strong></p><figure id="9f91f25a-918e-40f0-933c-d2e594ff1688" class="image"><a href="http://www.papertyari.com/wp-content/uploads/2014/12/IT_Officer_009_01.png?x19810"><img src="http://www.papertyari.com/wp-content/uploads/2014/12/IT_Officer_009_01.png?x19810"/></a></figure><p id="0c0e6e46-c5cb-4679-a921-4d3cb53c6b4c" class="">We can see that Narendra is teaching three subjects and knows two languages, thus there are two independent multi-valued dependencies. We can split the table into two tables.</p><p id="85387ffe-51a8-472f-8698-358f74623a84" class=""><strong>Table: </strong><strong>TeacherSubject</strong></p><figure id="86854304-6b8a-4509-ab97-04e0c9c21ad1" class="image"><a href="http://www.papertyari.com/wp-content/uploads/2014/12/IT_Officer_009_02.png?x19810"><img src="http://www.papertyari.com/wp-content/uploads/2014/12/IT_Officer_009_02.png?x19810"/></a></figure><p id="77e7a018-e8d1-4116-906a-4c1411c45229" class=""><strong>Table: </strong><strong>TeacherLanguage</strong></p><figure id="5d814aa9-cfb7-4452-bd46-7d44014eaf9a" class="image"><a href="http://www.papertyari.com/wp-content/uploads/2014/12/IT_Officer_009_03.png?x19810"><img src="http://www.papertyari.com/wp-content/uploads/2014/12/IT_Officer_009_03.png?x19810"/></a></figure><p id="d4f7bfa3-f108-47bf-bb6f-96d9c2462e88" class="">You can see know that there is less data redundancy.</p><h3 id="5365e91a-a3f9-432d-b33f-299997321f2e" class=""><strong>Fifth Normal Form (5NF)</strong></h3><p id="e2bdd63d-3b9c-4976-9219-eba530cd16bd" class="">A table is in the fifth normal form (5NF), if:</p><ul id="8b6b991c-1ded-414c-8a1e-e3d0038b6970" class="bulleted-list"><li style="list-style-type:disc">It is in the fourth normal form.</li></ul><ul id="6087002e-0263-4be1-8481-940c5d2926cc" class="bulleted-list"><li style="list-style-type:disc">Every join dependency in the table is implied by the candidate keys.</li></ul><p id="5323958a-1092-4cc1-ab23-392270b6036e" class="">This normal form is theoretical in nature, so we will not discuss it further. That concluded the discussion of normalization.</p><h1 id="8a78eb69-7612-47b6-b39e-3525a2c83390" class="">What is serializability and explain about conflict serializability?</h1><p id="18285333-16cd-4e64-9b49-1c9f50835ca9" class="">Serializability is a property of database transactions that ensures that concurrent execution of transactions results in a state equivalent to the serial (or sequential) execution of the same transactions. In other words, it ensures that multiple transactions executing concurrently do not interfere with each other and produce the same result as if they were executed one after the other, in a sequential order.</p><ul id="56ebb97d-15c6-4b5d-9873-b3ddf326302f" class="bulleted-list"><li style="list-style-type:disc">A schedule is called conflict serializability if after swapping of non-conflicting operations, it can transform into a serial schedule.</li></ul><ul id="c01989ef-4b2e-4444-a72a-ef842422aac1" class="bulleted-list"><li style="list-style-type:disc">The schedule will be a conflict serializable if it is conflict equivalent to a serial schedule.</li></ul><h1 id="0d0ab51e-2332-4cdb-9f7a-a3b71cf3f7ec" class="">Conflicting Operations</h1><p id="5348949c-076c-4aea-ae72-234980f0ff6e" class="">The two operations become conflicting if all conditions satisfy:</p><ol type="1" id="95a6fc26-97bc-4f5b-9e7a-03a69a158d4a" class="numbered-list" start="1"><li>Both belong to separate transactions.</li></ol><ol type="1" id="9d4db6ad-72b0-4546-8731-79eb1059d410" class="numbered-list" start="2"><li>They have the same data item.</li></ol><ol type="1" id="ef1567f4-6e2a-4fbc-9aa0-61b34786b8d8" class="numbered-list" start="3"><li>They contain at least one write operation.</li></ol><h3 id="7727a304-c2bb-4080-b4ce-94180138a334" class="">Example:</h3><p id="5c5851a6-6b9d-4a0a-ab21-c93ba79cd6da" class="">Swapping is possible only if S1 and S2 are logically equal.</p><figure id="41204d00-38ac-4c44-872e-b81cc3e7a77b" class="image"><a href="https://static.javatpoint.com/dbms/images/dbms-conflict-serializable-schedule.png"><img src="https://static.javatpoint.com/dbms/images/dbms-conflict-serializable-schedule.png"/></a></figure><p id="6d82830b-84d5-478e-b38f-9adc580200e7" class="">Here, S1 = S2. That means it is non-conflict.</p><figure id="39400202-d928-43f4-a30d-f534b86360ac" class="image"><a href="https://static.javatpoint.com/dbms/images/dbms-conflict-serializable-schedule2.png"><img src="https://static.javatpoint.com/dbms/images/dbms-conflict-serializable-schedule2.png"/></a></figure><p id="c5fca67c-24b5-46a1-bdeb-167f3ae26780" class="">Here, S1 ≠ S2. That means it is conflict.</p><h1 id="859e3e53-c5f5-4a8d-a7d0-414bdfdd1443" class="">Conflict Equivalent</h1><p id="79b932ea-59d7-4166-8544-fd9423d0ec02" class="">In the conflict equivalent, one can be transformed to another by swapping non-conflicting operations. In the given example, S2 is conflict equivalent to S1 (S1 can be converted to S2 by swapping non-conflicting operations).</p><p id="6c6c451d-c4f7-4956-9736-68ae2136668e" class="">Two schedules are said to be conflict equivalent if and only if:</p><ol type="1" id="e5325e6f-a342-4ebe-ae48-8c2611a091a1" class="numbered-list" start="1"><li>They contain the same set of the transaction.</li></ol><ol type="1" id="aee26a8f-3b83-4b60-8f7b-2151bb2b0590" class="numbered-list" start="2"><li>If each pair of conflict operations are ordered in the same way.</li></ol><h3 id="bbcaf662-75f3-4d6c-a937-a68efede72ff" class="">Example:</h3><figure id="834b19c1-8a08-4620-af34-c7b67173be96" class="image"><a href="https://static.javatpoint.com/dbms/images/dbms-conflict-serializable-schedule3.png"><img src="https://static.javatpoint.com/dbms/images/dbms-conflict-serializable-schedule3.png"/></a></figure><p id="ba4ba4c7-a0e2-4c20-ba8e-1efa945f13c5" class="">Schedule S2 is a serial schedule because, in this, all operations of T1 are performed before starting any operation of T2. Schedule S1 can be transformed into a serial schedule by swapping non-conflicting operations of S1.</p><p id="d1d323cc-c30c-4063-aa63-d0ec8f040081" class=""><strong>After swapping of non-conflict operations, the schedule S1 becomes:</strong></p><figure id="d39df703-f0d5-4fff-b467-1d4fd63d77a4" class="image"><a href="LAQs%20f1f858ac8a464da9b15b962989a58033/Untitled.png"><img style="width:1038px" src="LAQs%20f1f858ac8a464da9b15b962989a58033/Untitled.png"/></a></figure><p id="1bd6f87b-47c1-471c-bc69-f57871abc790" class="">Since, S1 is conflict serializable.</p><h1 id="80feb7fb-665e-41f2-b9e3-da609803ffb9" class="">Timestamp Based Protocols</h1><ul id="48aaa082-f057-4734-934f-fbd4d0bf0ea0" class="bulleted-list"><li style="list-style-type:disc">The Timestamp Ordering Protocol is used to order the transactions based on their Timestamps. The order of transaction is nothing but the ascending order of the transaction creation.</li></ul><ul id="d5ddbc26-980c-4144-9234-08754e9ed508" class="bulleted-list"><li style="list-style-type:disc">The priority of the older transaction is higher that&#x27;s why it executes first. To determine the timestamp of the transaction, this protocol uses system time or logical counter.</li></ul><ul id="e752d19b-1502-413b-8991-dc5a45fd6df3" class="bulleted-list"><li style="list-style-type:disc">The lock-based protocol is used to manage the order between conflicting pairs among transactions at the execution time. But Timestamp based protocols start working as soon as a transaction is created.</li></ul><ul id="ce6b09e2-e5b7-451f-91c5-27e47a3808a5" class="bulleted-list"><li style="list-style-type:disc">Let&#x27;s assume there are two transactions T1 and T2. Suppose the transaction T1 has entered the system at 007 times and transaction T2 has entered the system at 009 times. T1 has the higher priority, so it executes first as it is entered the system first.</li></ul><ul id="043f443a-e4ed-4dab-a8ae-4afe501cab81" class="bulleted-list"><li style="list-style-type:disc">The timestamp ordering protocol also maintains the timestamp of last &#x27;read&#x27; and &#x27;write&#x27; operation on a data.</li></ul><p id="1198b43d-2807-40db-8e94-a118dc636376" class=""><strong>Basic Timestamp ordering protocol works as follows:</strong></p><p id="bb92b899-1707-4c05-a0d9-75d1119071d1" class="">1. Check the following condition whenever a transaction Ti issues a <strong>Read (X)</strong> operation:</p><ul id="d8452a6b-8990-42a9-8724-7013506f5829" class="bulleted-list"><li style="list-style-type:disc">If W_TS(X) &gt;TS(Ti) then the operation is rejected.</li></ul><ul id="095c29b5-5276-4db9-af6c-328d1fcab36f" class="bulleted-list"><li style="list-style-type:disc">If W_TS(X) &lt;= TS(Ti) then the operation is executed.</li></ul><ul id="d1315f5a-9358-4d9b-a4dd-13ad4e358a50" class="bulleted-list"><li style="list-style-type:disc">Timestamps of all the data items are updated.</li></ul><p id="a66093e3-d205-44cf-b910-3a461e4a1afc" class="">2. Check the following condition whenever a transaction Ti issues a <strong>Write(X)</strong> operation:</p><ul id="0482562e-4bb6-4445-abc6-a3db792fbb4d" class="bulleted-list"><li style="list-style-type:disc">If TS(Ti) &lt; R_TS(X) then the operation is rejected.</li></ul><ul id="dbfc26ab-4a90-4224-a7cd-318c682b3be9" class="bulleted-list"><li style="list-style-type:disc">If TS(Ti) &lt; W_TS(X) then the operation is rejected and Ti is rolled back otherwise the operation is executed.</li></ul><p id="ec8ee638-8a62-4c52-a7f0-05085fdd889e" class=""><strong>Where,</strong></p><p id="d224f19c-f842-4871-97a3-f92a0a434d93" class=""><strong>TS(TI)</strong> denotes the timestamp of the transaction Ti.</p><p id="4f04e15b-658c-453c-a018-a87a7e36e32b" class=""><strong>R_TS(X)</strong> denotes the Read time-stamp of data-item X.</p><p id="9f7f2e1f-5ee2-420c-94b4-a8f9f05c1279" class=""><strong>W_TS(X)</strong> denotes the Write time-stamp of data-item X.</p><h1 id="015c1a99-638f-456f-ba76-8884284a0e58" class="">Advantages and Disadvantages of TO protocol:</h1><ul id="1e6cb053-3fbb-411b-b50f-1979ee250b4c" class="bulleted-list"><li style="list-style-type:disc">TO protocol ensures serializability since the precedence graph is as follows:</li></ul><figure id="1e26876d-2e6f-40c5-9950-9804d14fb0aa" class="image"><a href="https://static.javatpoint.com/dbms/images/dbms-timestamp-ordering-protocol.png"><img src="https://static.javatpoint.com/dbms/images/dbms-timestamp-ordering-protocol.png"/></a></figure><ul id="225c0131-846c-4acc-829f-da4e66904583" class="bulleted-list"><li style="list-style-type:disc">TS protocol ensures freedom from deadlock that means no transaction ever waits.</li></ul><ul id="11ba5ce0-fd45-4285-ad39-2b983d49cec6" class="bulleted-list"><li style="list-style-type:disc">But the schedule may not be recoverable and may not even be cascade- free.</li></ul><h1 id="726e974a-cf89-4ad1-9074-8374660f48cc" class="">Explain about precedence graph with example.</h1><p id="58086ca7-7f25-40de-9d8f-623e3efaed50" class="">Serialization Graph is used to test the Serializability of a schedule.</p><p id="57aeeaab-a664-4972-9534-aec25c15f495" class="">Assume a schedule S. For S, we construct a graph known as precedence graph. This graph has a pair G = (V, E), where V consists a set of vertices, and E consists a set of edges. The set of vertices is used to contain all the transactions participating in the schedule. The set of edges is used to contain all edges Ti -&gt;Tj for which one of the three conditions holds:</p><ol type="1" id="19ff03ae-6c9e-4aed-9433-aa85b3876fcc" class="numbered-list" start="1"><li>Create a node Ti → Tj if Ti executes write (Q) before Tj executes read (Q).</li></ol><ol type="1" id="ee927a9e-4d7f-42ec-9168-f188bc53219c" class="numbered-list" start="2"><li>Create a node Ti → Tj if Ti executes read (Q) before Tj executes write (Q).</li></ol><ol type="1" id="cf9d19d8-27ee-40ab-a4ca-9c583f238268" class="numbered-list" start="3"><li>Create a node Ti → Tj if Ti executes write (Q) before Tj executes write (Q).</li></ol><figure id="b798c859-245c-471b-b178-759fdd869afa" class="image"><a href="https://static.javatpoint.com/dbms/images/dbms-testing-of-serializability.png"><img src="https://static.javatpoint.com/dbms/images/dbms-testing-of-serializability.png"/></a></figure><ul id="705e1eea-d6da-4ca7-95a9-b153559c3079" class="bulleted-list"><li style="list-style-type:disc">If a precedence graph contains a single edge Ti → Tj, then all the instructions of Ti are executed before the first instruction of Tj is executed.</li></ul><ul id="d04b9f33-25d7-4996-b87d-f8535be83f8c" class="bulleted-list"><li style="list-style-type:disc">If a precedence graph for schedule S contains a cycle, then S is non-serializable. If the precedence graph has no cycle, then S is known as serializable.</li></ul><p id="d0d61cd6-1860-4196-ae88-37f3595a0b98" class=""><strong>For example:</strong></p><figure id="962a3cb3-5c68-47bc-9f73-d7d54703bd5a" class="image"><a href="https://static.javatpoint.com/dbms/images/dbms-testing-of-serializability2.png"><img src="https://static.javatpoint.com/dbms/images/dbms-testing-of-serializability2.png"/></a></figure><p id="61db0629-0538-46c2-9cc3-75e95ab0fc60" class=""><strong>Explanation:</strong></p><p id="6e34dd07-bef4-43ed-b37f-62273e18dd31" class=""><strong>Read(A):</strong> In T1, no subsequent writes to A, so no new edges<strong>Read(B):</strong> In T2, no subsequent writes to B, so no new edges<strong>Read(C):</strong> In T3, no subsequent writes to C, so no new edges<strong>Write(B):</strong> B is subsequently read by T3, so add edge T2 → T3<strong>Write(C):</strong> C is subsequently read by T1, so add edge T3 → T1<strong>Write(A):</strong> A is subsequently read by T2, so add edge T1 → T2<strong>Write(A):</strong> In T2, no subsequent reads to A, so no new edges<strong>Write(C):</strong> In T1, no subsequent reads to C, so no new edges<strong>Write(B):</strong> In T3, no subsequent reads to B, so no new edges</p><h3 id="37494743-b21e-4bb9-8a5d-6155106d2102" class="">Precedence graph for schedule S1:</h3><figure id="634a1355-4276-49f6-a78f-69b9a1c50c1b" class="image"><a href="https://static.javatpoint.com/dbms/images/dbms-testing-of-serializability3.png"><img src="https://static.javatpoint.com/dbms/images/dbms-testing-of-serializability3.png"/></a></figure><p id="6af42ccb-be03-4696-9c5f-a1a8aa49f58a" class="">The precedence graph for schedule S1 contains a cycle that&#x27;s why Schedule S1 is non-serializable.</p><figure id="d03bd604-66f0-4e53-9b69-cde6af6c42d2" class="image"><a href="https://static.javatpoint.com/dbms/images/dbms-testing-of-serializability4.png"><img src="https://static.javatpoint.com/dbms/images/dbms-testing-of-serializability4.png"/></a></figure><p id="b393d17f-b0f4-4837-9d6b-81c2278fb029" class=""><strong>Explanation:</strong></p><p id="11ef1249-693a-4c59-b0fb-eeebb665ed34" class=""><strong>Read(A):</strong> In T4,no subsequent writes to A, so no new edges<strong>Read(C):</strong> In T4, no subsequent writes to C, so no new edges<strong>Write(A):</strong> A is subsequently read by T5, so add edge T4 → T5<strong>Read(B):</strong> In T5,no subsequent writes to B, so no new edges<strong>Write(C):</strong> C is subsequently read by T6, so add edge T4 → T6<strong>Write(B):</strong> A is subsequently read by T6, so add edge T5 → T6<strong>Write(C):</strong> In T6, no subsequent reads to C, so no new edges<strong>Write(A):</strong> In T5, no subsequent reads to A, so no new edges<strong>Write(B):</strong> In T6, no subsequent reads to B, so no new edges</p><h3 id="3abc630a-7966-4903-9671-d6be007feed7" class="">Precedence graph for schedule S2:</h3><figure id="383dea6a-7317-42cd-accc-a2adf28bf992" class="image"><a href="https://static.javatpoint.com/dbms/images/dbms-testing-of-serializability5.png"><img src="https://static.javatpoint.com/dbms/images/dbms-testing-of-serializability5.png"/></a></figure><p id="b8cc9a81-5899-44f6-a139-42da42907136" class="">The precedence graph for schedule S2 contains no cycle that&#x27;s why ScheduleS2 is serializable.</p><h1 id="81e33c43-4319-475e-8ee6-b94d556d1d60" class="">Lock Based Protocols</h1><p id="de341b28-3e4f-493c-9492-683aa6935837" class="">In this type of protocol, any transaction cannot read or write data until it acquires an appropriate lock on it. There are two types of lock:</p><p id="3bf3c5a2-8495-4c08-9ef4-390e1f9e7f35" class=""><strong>1. Shared lock:</strong></p><ul id="1ad0e493-480b-44c6-8d59-f7b58b310a67" class="bulleted-list"><li style="list-style-type:disc">It is also known as a Read-only lock. In a shared lock, the data item can only read by the transaction.</li></ul><ul id="f8a6459a-20e6-4935-89f9-5ea0813335db" class="bulleted-list"><li style="list-style-type:disc">It can be shared between the transactions because when the transaction holds a lock, then it can&#x27;t update the data on the data item.</li></ul><p id="ee9a860c-485d-4b2e-93e4-95ccfc71ae06" class=""><strong>2. Exclusive lock:</strong></p><ul id="b70e55e0-0ef6-4dcb-9fc9-2e6e2341c3e1" class="bulleted-list"><li style="list-style-type:disc">In the exclusive lock, the data item can be both reads as well as written by the transaction.</li></ul><ul id="34db2fb5-f94d-4b73-a9c2-61853f0c7876" class="bulleted-list"><li style="list-style-type:disc">This lock is exclusive, and in this lock, multiple transactions do not modify the same data simultaneously.</li></ul><h1 id="b9698f9a-1ca3-45b8-bd9b-4849cca9ea99" class="">There are four types of lock protocols available:</h1><h3 id="d0c63498-6cc4-42a6-b545-f60998ecff47" class="">1. Simplistic lock protocol</h3><p id="180a8bb0-2687-4014-8adc-21a96fa9275c" class="">It is the simplest way of locking the data while transaction. Simplistic lock-based protocols allow all the transactions to get the lock on the data before insert or delete or update on it. It will unlock the data item after completing the transaction.</p><h3 id="0fdf2d49-b653-4eda-9662-74f6792b37f0" class="">2. Pre-claiming Lock Protocol</h3><ul id="efe03bb4-e22e-4f87-8c1e-7e1b25607a1e" class="bulleted-list"><li style="list-style-type:disc">Pre-claiming Lock Protocols evaluate the transaction to list all the data items on which they need locks.</li></ul><ul id="9f4fbd6d-c0bd-4980-9fb1-09fc0918f3df" class="bulleted-list"><li style="list-style-type:disc">Before initiating an execution of the transaction, it requests DBMS for all the lock on all those data items.</li></ul><ul id="022e34ac-af37-4c44-a3ac-3c4f45c04c60" class="bulleted-list"><li style="list-style-type:disc">If all the locks are granted then this protocol allows the transaction to begin. When the transaction is completed then it releases all the lock.</li></ul><ul id="92b6e71c-14cb-40e8-b132-60d84019d364" class="bulleted-list"><li style="list-style-type:disc">If all the locks are not granted then this protocol allows the transaction to rolls back and waits until all the locks are granted.</li></ul><figure id="e8574f6a-efd3-4746-9b57-ea3607479926" class="image"><a href="https://static.javatpoint.com/dbms/images/dbms-lock-based-protocol.png"><img src="https://static.javatpoint.com/dbms/images/dbms-lock-based-protocol.png"/></a></figure><h3 id="9f143319-89a5-415d-9465-63d8fe770f8a" class="">3. Two-phase locking (2PL)</h3><ul id="d2856db8-4939-487d-b885-0f92d11c9ae8" class="bulleted-list"><li style="list-style-type:disc">The two-phase locking protocol divides the execution phase of the transaction into three parts.</li></ul><ul id="3b2d2043-b09e-4a45-b63b-b37780fe9c91" class="bulleted-list"><li style="list-style-type:disc">In the first part, when the execution of the transaction starts, it seeks permission for the lock it requires.</li></ul><ul id="e258e97f-3419-48d4-8ce3-e043cc3a61ee" class="bulleted-list"><li style="list-style-type:disc">In the second part, the transaction acquires all the locks. The third phase is started as soon as the transaction releases its first lock.</li></ul><ul id="e3203f54-dc94-4410-9ded-27f935385e03" class="bulleted-list"><li style="list-style-type:disc">In the third phase, the transaction cannot demand any new locks. It only releases the acquired locks.</li></ul><figure id="4cb426a2-10dd-411a-bcd8-10f4cd053837" class="image"><a href="https://static.javatpoint.com/dbms/images/dbms-lock-based-protocol2.png"><img src="https://static.javatpoint.com/dbms/images/dbms-lock-based-protocol2.png"/></a></figure><p id="12bad5ce-a231-497c-956e-f73013203c47" class="">There are two phases of 2PL:</p><p id="9eb2c6e3-306d-4375-b457-81cd10693175" class=""><strong>Growing phase:</strong> In the growing phase, a new lock on the data item may be acquired by the transaction, but none can be released.</p><p id="a76db26b-c1c2-4d1f-879e-f0f5a7af2320" class=""><strong>Shrinking phase:</strong> In the shrinking phase, existing lock held by the transaction may be released, but no new locks can be acquired.</p><p id="894eabc9-313b-4815-967c-dc9db5810d94" class="">In the below example, if lock conversion is allowed then the following phase can happen:</p><ol type="1" id="e6f69f82-c628-4605-84d5-e7344eb4d653" class="numbered-list" start="1"><li>Upgrading of lock (from S(a) to X (a)) is allowed in growing phase.</li></ol><ol type="1" id="653ee270-4c34-4149-8245-b0388c790950" class="numbered-list" start="2"><li>Downgrading of lock (from X(a) to S(a)) must be done in shrinking phase.</li></ol><p id="9d4ddd89-113b-4dca-a039-9aec1c8c7ff1" class=""><strong>Example:</strong></p><figure id="40501a2e-7a92-43bf-93ab-38d3f087c867" class="image"><a href="https://static.javatpoint.com/dbms/images/dbms-lock-based-protocol3.png"><img src="https://static.javatpoint.com/dbms/images/dbms-lock-based-protocol3.png"/></a></figure><p id="3f6dc7e5-2936-4f1e-9499-941aabc67e93" class="">The following way shows how unlocking and locking work with 2-PL.</p><p id="f3b63494-1522-4cca-be79-5733098615d7" class=""><strong>Transaction T1:</strong></p><ul id="523e6c16-aad0-4412-9920-b6e08bc951b9" class="bulleted-list"><li style="list-style-type:disc"><strong>Growing phase:</strong> from step 1-3</li></ul><ul id="b1338c39-78da-490f-8fd4-76f72eac0311" class="bulleted-list"><li style="list-style-type:disc"><strong>Shrinking phase:</strong> from step 5-7</li></ul><ul id="865e9cbb-c428-44b3-a005-5826af988092" class="bulleted-list"><li style="list-style-type:disc"><strong>Lock point:</strong> at 3</li></ul><p id="ad4d0cac-6ab2-46be-9de5-4bd261c68bfb" class=""><strong>Transaction T2:</strong></p><ul id="214b4de0-2826-47c4-bfc3-000a10957d86" class="bulleted-list"><li style="list-style-type:disc"><strong>Growing phase:</strong> from step 2-6</li></ul><ul id="cc513edf-9f53-4082-9650-52829d1eb94f" class="bulleted-list"><li style="list-style-type:disc"><strong>Shrinking phase:</strong> from step 8-9</li></ul><ul id="7a523244-6e6c-419b-877e-bb76c860a8ec" class="bulleted-list"><li style="list-style-type:disc"><strong>Lock point:</strong> at 6</li></ul><h3 id="e1ee8565-d684-492b-bb96-3b12f4354544" class="">4. Strict Two-phase locking (Strict-2PL)</h3><ul id="35b4d1d6-55de-4c61-8cb4-7744d671edb3" class="bulleted-list"><li style="list-style-type:disc">The first phase of Strict-2PL is similar to 2PL. In the first phase, after acquiring all the locks, the transaction continues to execute normally.</li></ul><ul id="d813f82b-5c34-463c-ae92-98c3036b1e8e" class="bulleted-list"><li style="list-style-type:disc">The only difference between 2PL and strict 2PL is that Strict-2PL does not release a lock after using it.</li></ul><ul id="c7b1d0ac-c941-4e0c-a3a3-9a6dd8a2a304" class="bulleted-list"><li style="list-style-type:disc">Strict-2PL waits until the whole transaction to commit, and then it releases all the locks at a time.</li></ul><ul id="026936a6-98dc-4cf5-b038-3737de6dee18" class="bulleted-list"><li style="list-style-type:disc">Strict-2PL protocol does not have shrinking phase of lock release.</li></ul><figure id="0e265ada-657e-437a-9c05-29ca2f75ea03" class="image"><a href="https://static.javatpoint.com/dbms/images/dbms-lock-based-protocol4.png"><img src="https://static.javatpoint.com/dbms/images/dbms-lock-based-protocol4.png"/></a></figure><p id="5b66acd2-20a8-4b26-a11e-cbfcbdee3281" class="">It does not have cascading abort as 2PL does.</p><h1 id="a326438c-db38-4916-a75a-275a9b6b0a7a" class="">Explain about dynamic Indexing-B+ Trees.</h1><h1 id="8e2d901e-888d-4233-9897-7cd465bf4307" class="">B+ Tree</h1><ul id="4b06e396-e5bf-4387-9cef-237a2d09d8b6" class="bulleted-list"><li style="list-style-type:disc">The B+ tree is a balanced binary search tree. It follows a multi-level index format.</li></ul><ul id="2d352ddd-7f1f-4a47-87c0-02f3f51a7251" class="bulleted-list"><li style="list-style-type:disc">In the B+ tree, leaf nodes denote actual data pointers. B+ tree ensures that all leaf nodes remain at the same height.</li></ul><ul id="7a0ac36b-bf4f-4a75-a633-5345545749a1" class="bulleted-list"><li style="list-style-type:disc">In the B+ tree, the leaf nodes are linked using a link list. Therefore, a B+ tree can support random access as well as sequential access.</li></ul><h1 id="907fb0b7-5ba4-43e4-8010-e1eacc8b069f" class="">Structure of B+ Tree</h1><ul id="28afc311-d0e4-469c-b368-abc483b6b4b5" class="bulleted-list"><li style="list-style-type:disc">In the B+ tree, every leaf node is at equal distance from the root node. The B+ tree is of the order n where n is fixed for every B+ tree.</li></ul><ul id="81110de3-1363-4715-881c-fb013eb7902b" class="bulleted-list"><li style="list-style-type:disc">It contains an internal node and leaf node.</li></ul><figure id="7ca23fc5-464c-4bbe-8308-38160ce73000" class="image"><a href="https://static.javatpoint.com/dbms/images/dbms-b-plus-tree.png"><img src="https://static.javatpoint.com/dbms/images/dbms-b-plus-tree.png"/></a></figure><h2 id="7cbbab03-61a3-4524-991d-6110416b9ccf" class="">Internal node</h2><ul id="9f7e67be-cd99-40d9-882c-458a8d815296" class="bulleted-list"><li style="list-style-type:disc">An internal node of the B+ tree can contain at least n/2 record pointers except the root node.</li></ul><ul id="8b6f2b31-e400-417c-bf44-abe612d54940" class="bulleted-list"><li style="list-style-type:disc">At most, an internal node of the tree contains n pointers.</li></ul><h2 id="45b06f9a-3499-432e-9738-af8b8f1b21d4" class="">Leaf node</h2><ul id="8d4e2f65-58fd-407e-ae42-0f84e9e27f09" class="bulleted-list"><li style="list-style-type:disc">The leaf node of the B+ tree can contain at least n/2 record pointers and n/2 key values.</li></ul><ul id="e0750a04-0052-4eb1-a5fc-e26fb6dccbd7" class="bulleted-list"><li style="list-style-type:disc">At most, a leaf node contains n record pointer and n key values.</li></ul><ul id="2b690d85-35b3-413c-89c2-4dc7fd795842" class="bulleted-list"><li style="list-style-type:disc">Every leaf node of the B+ tree contains one block pointer P to point to next leaf node.</li></ul><h1 id="3cb8585d-4ad3-4455-af8d-84d0fd026823" class="">Searching a record in B+ Tree</h1><p id="f2da12b3-5888-4f76-bbf6-711115aa9e09" class="">Suppose we have to search 55 in the below B+ tree structure. First, we will fetch for the intermediary node which will direct to the leaf node that can contain a record for 55.</p><p id="26486685-26ba-4983-ad84-0d2d1d0b8d0a" class="">So, in the intermediary node, we will find a branch between 50 and 75 nodes. Then at the end, we will be redirected to the third leaf node. Here DBMS will perform a sequential search to find 55.</p><figure id="d450d7a3-de30-4cfe-bf5d-2975d1367afe" class="image"><a href="https://static.javatpoint.com/dbms/images/dbms-b-plus-tree_2.png"><img src="https://static.javatpoint.com/dbms/images/dbms-b-plus-tree_2.png"/></a></figure><h1 id="3ae402d7-3b00-453d-ab53-3bf353a49172" class="">B+ Tree Insertion</h1><p id="ca9841b1-c399-4819-a45e-12c0601eaf81" class="">Suppose we want to insert a record 60 in the below structure. It will go to the 3rd leaf node after 55. It is a balanced tree, and a leaf node of this tree is already full, so we cannot insert 60 there.</p><p id="3dea4507-2a84-4a77-bbda-559fe5e516f0" class="">In this case, we have to split the leaf node, so that it can be inserted into tree without affecting the fill factor, balance and order.</p><figure id="847f7b88-f7b2-4f25-ab5c-8674e61d67f0" class="image"><a href="https://static.javatpoint.com/dbms/images/dbms-b-plus-tree_3.png"><img src="https://static.javatpoint.com/dbms/images/dbms-b-plus-tree_3.png"/></a></figure><p id="13d29380-f2a6-46f3-8134-0b49d5d9100d" class="">The 3rd leaf node has the values (50, 55, 60, 65, 70) and its current root node is 50. We will split the leaf node of the tree in the middle so that its balance is not altered. So we can group (50, 55) and (60, 65, 70) into 2 leaf nodes.</p><p id="2c6737ba-dfc8-4435-a4e1-73faa8e1a1da" class="">If these two has to be leaf nodes, the intermediate node cannot branch from 50. It should have 60 added to it, and then we can have pointers to a new leaf node.</p><figure id="dddd25ad-789e-493b-ba0e-cadc49dfe140" class="image"><a href="https://static.javatpoint.com/dbms/images/dbms-b-plus-tree_4.png"><img src="https://static.javatpoint.com/dbms/images/dbms-b-plus-tree_4.png"/></a></figure><p id="89e23c79-48db-4a7a-b3ca-555913264fd9" class="">This is how we can insert an entry when there is overflow. In a normal scenario, it is very easy to find the node where it fits and then place it in that leaf node.</p><h1 id="358cc854-291d-4c16-9980-c81ff24f6cf5" class="">B+ Tree Deletion</h1><p id="e740b618-7cba-42b0-81ff-8bc7455f4a5a" class="">Suppose we want to delete 60 from the above example. In this case, we have to remove 60 from the intermediate node as well as from the 4th leaf node too. If we remove it from the intermediate node, then the tree will not satisfy the rule of the B+ tree. So we need to modify it to have a balanced tree.</p><p id="243ec037-0aa5-45f8-aef1-45fca6f67cea" class="">After deleting node 60 from above B+ tree and re-arranging the nodes, it will show as follows:</p><figure id="4a33071d-7afa-4bcb-b06e-30ce29ec9fd2" class="image"><a href="https://static.javatpoint.com/dbms/images/dbms-b-plus-tree_5.png"><img src="https://static.javatpoint.com/dbms/images/dbms-b-plus-tree_5.png"/></a></figure><p id="2d5112da-1fc0-4479-830b-68f83e77b649" class="">
+</p><h1 id="f9c878cb-aa63-41e4-b60d-df78d4ce3b17" class="">File Organization Techniques</h1><p id="710e9980-3ea2-4a2a-8dc6-5767f907d469" class="">The logical relationships among the many records that make up the file, particularly in terms of means of identification and access to any given record, are referred to as file organization. Simply put, file organization is the process of storing files in a specific order.</p><p id="ed174160-eda6-405c-8b3d-50f7b05b540e" class="">In this article, we will dive deeper into File Organization in DBMS according to the <a href="https://byjus.com/gate/gate-syllabus-for-computer-science-engineering/">GATE Syllabus for (Computer Science Engineering) CSE</a>. Keep reading ahead to learn more.</p><p id="a4de1e4a-5afd-46f5-90c9-89fa2ea67b8e" class=""><strong>Table of Contents</strong></p><ul id="2da8d3d3-29cf-48ab-ad2b-e189f699d671" class="bulleted-list"><li style="list-style-type:disc"><a href="https://byjus.com/#what-is-file-organization-in-dbms">What is File Organization in DBMS?</a></li></ul><ul id="78294f61-a408-4850-b6ad-93f4d8cb9373" class="bulleted-list"><li style="list-style-type:disc"><a href="https://byjus.com/#objectives-of-file-organization">Objectives of File Organization</a></li></ul><ul id="a9746404-2ba1-4122-9195-04c6a857936c" class="bulleted-list"><li style="list-style-type:disc"><a href="https://byjus.com/#types-of-file-organization-in-data-structure">Types of File Organization in Data Structure</a><ul id="acaf653c-53f3-42c5-86ee-a1bbe917ebc2" class="bulleted-list"><li style="list-style-type:circle"><a href="https://byjus.com/#sequential-file-organization">Sequential File Organization</a></li></ul><ul id="8db3514e-24b9-4fc7-9643-faddc3712b05" class="bulleted-list"><li style="list-style-type:circle"><a href="https://byjus.com/#heap-file-organization">Heap File Organization</a></li></ul><ul id="98bb16fc-29f5-4dca-b338-a85d1e0f2722" class="bulleted-list"><li style="list-style-type:circle"><a href="https://byjus.com/#hash-file-organization">Hash File Organization</a></li></ul><ul id="2e93b89c-70e4-4fae-a342-52094518a1a3" class="bulleted-list"><li style="list-style-type:circle"><a href="https://byjus.com/#b+-file-organization">B+ File Organization</a></li></ul><ul id="92ad6865-cce6-4797-b28c-e3ed683c9b05" class="bulleted-list"><li style="list-style-type:circle"><a href="https://byjus.com/#indexed-sequential-access-method-or-isam">Indexed Sequential Access Method or ISAM</a></li></ul><ul id="f39e1030-7e7b-4e33-b87b-dd0523351230" class="bulleted-list"><li style="list-style-type:circle"><a href="https://byjus.com/#cluster-file-organization">Cluster File Organization</a></li></ul></li></ul><h2 id="fd4b36ff-7d60-4dd7-9910-ea9136daf155" class="">What is File Organization in DBMS?</h2><p id="c2ce48fd-278c-4236-85e1-79d4d597ccba" class="">The File is a set of documents. We can get to the records by using the primary key. The sort of file organization that was employed for a given set of records can determine the type and frequency of access.</p><p id="9af28c57-a2e6-4770-8345-378dc73948bd" class="">A logical relationship between distinct records is referred to as file organization. This method specifies how disc blocks are mapped to file records. The word “file organization” refers to the method by which records are organized into blocks and then placed on a storage media.</p><p id="7a50578f-b618-4cee-aa3d-a69a66da5333" class="">The first method of mapping a database to a file is to employ many files, each containing only one fixed-length entry. Another option is to arrange our files so that we can store data of various lengths. Fixed-length record files are easier to implement than variable-length record files.</p><h2 id="a4bb94b4-05ad-4cfe-bb02-acf0a40c30a5" class="">Objectives of File Organization in Data Structure</h2><p id="e1c235e1-b1e5-4258-b225-ebfdd5d1e139" class="">Here are some ways in which file organization helps:</p><ul id="d29bc354-53f2-4fc8-8b60-2b5c42ad7531" class="bulleted-list"><li style="list-style-type:disc">It has an ideal record selection, which means records can be selected as quickly as feasible.</li></ul><ul id="c4158eeb-9e47-47c3-b674-5414578ae706" class="bulleted-list"><li style="list-style-type:disc">Insert, delete, and update transactions on records should be simple and rapid.</li></ul><ul id="ceb56c42-b62c-41e9-86af-e2bdf634c88b" class="bulleted-list"><li style="list-style-type:disc">Duplicate records cannot be created by inserting, updating, or deleting records.</li></ul><ul id="79fa3036-f9b2-4438-97b3-4f121aecebba" class="bulleted-list"><li style="list-style-type:disc">Records should be stored efficiently to save money on storage.</li></ul><h2 id="4f80f6ea-4ec3-4885-b28b-edf0f2364058" class="">Types of File Organization</h2><p id="088a6684-11ca-46d5-85c0-57008eb553ba" class="">There are a variety of ways to organize your files. On the basis of access or selection, these methods offer advantages and disadvantages. The programmers choose the finest file organization strategy for their needs when it comes to file organization.</p><figure id="dff06515-9999-4f8e-b0db-b70f93f8a491" class="image"><a href="https://cdn1.byjus.com/wp-content/uploads/2022/05/word-image271.png"><img src="https://cdn1.byjus.com/wp-content/uploads/2022/05/word-image271.png"/></a></figure><p id="d9959441-d82f-4af8-82bc-6f0b89fc5363" class="">The following are the different types of file organization:</p><h3 id="f8024c3f-5424-4bc2-b29d-88806947d99c" class="">Sequential File Organization</h3><p id="1a8872a7-5843-46fd-be84-90e9a6ac0c62" class="">This is the most straightforward technique of file arrangement. Files are saved in this method in sequential order. Read more on <a href="https://byjus.com/gate/sequential-file-organization-in-dbms-notes/">Sequential File Organization</a> here.</p><h3 id="9a4b4ff6-313f-4d7b-a8f2-c5bdec4688e8" class="">Heap File Organization</h3><p id="856f6bc6-f294-4381-85fe-f8de63b070e8" class="">It is the most fundamental and basic type of organizational structure. It’s based on data chunks. The records are inserted at the end of the file in the heap file organization. The ordering and sorting of records are not required when the entries are added. Read more on <a href="https://byjus.com/gate/heap-file-organization-in-dbms-notes/">Heap File Organization</a> here.</p><h3 id="f5d25a52-9362-48f1-926c-b8bb05291644" class="">Hash File Organization</h3><p id="5a3b0c48-a254-49bf-a41a-4af2b55fba0f" class="">The computation of the hash function on some of the fields of the records is used by Hash File Organization. The output of the hash function defines the position of the disc block where the records will be stored. Read more on <a href="https://byjus.com/gate/hash-file-organization-in-dbms-notes/">Hash File Organization</a> here.</p><h3 id="9ae90be1-513c-4292-94ff-25b76a0669db" class="">B+ File Organization</h3><p id="970179b6-f712-4b22-a5d2-703693875047" class="">The advanced way of an indexed sequential access mechanism is the B+ tree file organization. In File, records are stored in a tree-like structure. Read more on <a href="https://byjus.com/gate/b-plus-file-organization-in-dbms-notes/">B+ File Organization</a> here.</p><h3 id="466ab4f0-2569-4b5a-ab04-82487aad8c21" class="">Indexed Sequential Access Method or ISAM</h3><p id="9041e955-785e-469c-bc95-b980f9a720cd" class="">ISAM (Advanced Sequential File Organizing Approach) is an advanced sequential file organization method. Records are stored in the file using the primary key in this way. For each primary key, an index value is created and mapped to the record. The address of the record in any file is contained in this index. Read more on <a href="https://byjus.com/gate/indexed-sequential-access-method-isam-notes/">ISAM</a> here.</p><h3 id="d0caf8a9-d712-4cbf-948e-82884c0701c2" class="">Cluster File Organization</h3><p id="68d28400-eec2-48ca-bd5d-65b1f97f7102" class="">Clusters are created when two or more records are saved in the same file. There will be two or more than two tables in the very same data block in these files, and key attributes that are used to link these tables together will only be kept once.</p></div></article></body></html>
