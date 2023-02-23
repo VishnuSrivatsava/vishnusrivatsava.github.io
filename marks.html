@@ -127,9 +127,9 @@
 	<h1>Calculate Required Marks</h1>
 	<form onsubmit="calculateRequiredMarks(); return false;">
 		<label for="a">Enter Mid-1 Marks(Out Of 30)</label>
-		<input type="number" id="a" required>
+		<input type="number" step="0.1" id="a" required>
 		<label for="b">Enter Mid-2 Marks(Out Of 30)</label>
-		<input type="number" id="b" required>
+		<input type="number" step="0.1" id="b" required>
 		<button type="submit">Calculate</button>
 	</form>
 	<div id="result-container" class="invisible">
