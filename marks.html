@@ -172,9 +172,35 @@
 			
 			document.getElementById('A-Grade').textContent = `${requiredMarksA.toFixed(2)} marks`;
 			document.getElementById('B-Grade').textContent = `${requiredMarksB.toFixed(2)} marks`;
-			document.getElementById('C-Grade').textContent = `${requiredMarksC.toFixed(2)} marks`;
-			document.getElementById('D-Grade').textContent = `${requiredMarksD.toFixed(2)} marks`;
-			document.getElementById('PASS').textContent = `${requiredMarksP.toFixed(2)} marks`;
+			
+			
+			if(requiredMarksC < 26){
+				document.getElementById('C-Grade').textContent = `${26.00.toFixed(2)} marks`;
+				
+			}
+			else{
+				document.getElementById('C-Grade').textContent = `${requiredMarksC.toFixed(2)} marks`;
+			}
+			
+			if(requiredMarksD < 26){
+				document.getElementById('D-Grade').textContent = `${26.00.toFixed(2)} marks`;
+				
+			}
+			else{
+				document.getElementById('D-Grade').textContent = `${requiredMarksD.toFixed(2)} marks`;
+			}
+			
+			if(requiredMarksP < 26){
+				document.getElementById('PASS').textContent = `${26.00.toFixed(2)} marks`;
+				
+			}
+			else{
+				document.getElementById('PASS').textContent = `${requiredMarksP.toFixed(2)} marks`;
+			}
+			
+			
+			
+			
 			
 			
 			
