@@ -109,6 +109,17 @@
 		  font-weight: bold;
 		}
 
+		.invisible {
+			visibility: hidden;
+			position: absolute;
+			top: -9999px;
+		}
+
+		.visible {
+			visibility: visible;
+			position: static;
+		}
+
 
 		</style>
 </head>
@@ -121,11 +132,14 @@
 		<input type="number" id="b" required>
 		<button type="submit">Calculate</button>
 	</form>
-	<div id="result-container">
+	<div id="result-container" class="invisible">
 		<p>Required Marks In Sem for (Out Of 70):</p>
-		<p>O-grade: <span id="O-Grade"></span></p>
-		<p>A-grade: <span id="A-Grade"></span></p>
-		<p>B-grade: <span id="B-Grade"></span></p>
+		<p>O-Grade: <span id="O-Grade"></span></p>
+		<p>A-Grade: <span id="A-Grade"></span></p>
+		<p>B-Grade: <span id="B-Grade"></span></p>
+		<p>C-Grade: <span id="C-Grade"></span></p>
+		<p>D-Grade: <span id="D-Grade"></span></p>
+		<p>P-Grade: <span id="PASS"></span></p>
 	</div>
 	<script>
 		function calculateRequiredMarks() {
@@ -141,12 +155,27 @@
 			const requiredMarksO = (85 - result)
 			const requiredMarksA = (70 - result)
 			const requiredMarksB = (60 - result)
-
-			document.getElementById('O-Grade').textContent = `${requiredMarksO.toFixed(2)} marks`;
+			const requiredMarksC = (55 - result)
+			const requiredMarksD = (50 - result)
+			const requiredMarksP = (40 - result)
+			if(requiredMarksO > 70){
+				document.getElementById('O-Grade').textContent = `IMPOSSIBLE`;
+				document.getElementById('O-Grade').style.color = 'red';
+			}
+			else{
+				document.getElementById('O-Grade').textContent = `${requiredMarksO.toFixed(2)} marks`;
+			}
+			
 			document.getElementById('A-Grade').textContent = `${requiredMarksA.toFixed(2)} marks`;
 			document.getElementById('B-Grade').textContent = `${requiredMarksB.toFixed(2)} marks`;
-
+			document.getElementById('C-Grade').textContent = `${requiredMarksC.toFixed(2)} marks`;
+			document.getElementById('D-Grade').textContent = `${requiredMarksD.toFixed(2)} marks`;
+			document.getElementById('PASS').textContent = `${requiredMarksP.toFixed(2)} marks`;
+			
+			
+			
 			document.getElementById('result-container').style.display = 'block';
+			document.getElementById('result-container').className = 'visible';
 		}
 	</script>
 </body>
