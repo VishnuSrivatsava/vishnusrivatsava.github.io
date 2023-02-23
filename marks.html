@@ -149,6 +149,10 @@
 				alert('Marks should be less than or equal to 30');
 				return;
 			}
+			if(a < 0 || b < 0){
+				alert('Marks should be greater than or equal to 0');
+				return;
+			}
 			const min = Math.min(a,b);
 			const max = a+b-min;
 			const result = 0.3*min + 0.7*max;
