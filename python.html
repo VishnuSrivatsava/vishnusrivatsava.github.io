@@ -682,8 +682,7 @@ import fibonacci
 for i in range(10):
     print(fibonacci.fibonacci(i))
 
-</code></pre><h2 id="60a8358c-d334-4459-8508-6ce5805c0148" class="">Write a script named <strong>py</strong>. This script should prompt the user for the names of two text files. The contents of the first file should be input and written to the second file.</h2><p id="bb6dfa26-51f0-45e3-99ab-c252bd866003" class="">
-</p><pre id="dded99b6-4e02-46e6-b8ab-d7df984a4ebc" class="code code-wrap"><code>import os
+</code></pre><h2 id="60a8358c-d334-4459-8508-6ce5805c0148" class="">Write a script named code.py. This script should prompt the user for the names of two text files. The contents of the first file should be input and written to the second file.</h2><pre id="dded99b6-4e02-46e6-b8ab-d7df984a4ebc" class="code code-wrap"><code>import os
 
 def copy_file():
 		source_file = input(&quot;Enter the name of the source file: &quot;)# Check if the source file exists
@@ -746,10 +745,7 @@ def update_labels():
 
 tk.Button(root, text=&quot;Update&quot;, command=update_labels).grid(row=4, column=1)
 
-root.mainloop()</code></pre><p id="042fcb55-2f9b-4f88-b778-5dd464df3e31" class="block-color-pink">
-</p><p id="b812d39e-499b-4c58-9ed8-b21adbcfe7b7" class="">
-</p><h2 id="47b36e24-743d-4f7a-8096-c95e613cd1d1" class="">Write a program that inputs a text file. The program should print all of the unique words in the file in alphabetical order.</h2><p id="2daedc66-50c0-4791-b6f5-5c3d14bd238a" class="">
-</p><pre id="543a8d77-87ae-4688-aff8-ace71e197622" class="code"><code># Open the file for reading
+root.mainloop()</code></pre><h2 id="47b36e24-743d-4f7a-8096-c95e613cd1d1" class="">Write a program that inputs a text file. The program should print all of the unique words in the file in alphabetical order.</h2><pre id="543a8d77-87ae-4688-aff8-ace71e197622" class="code"><code># Open the file for reading
 with open(r&quot;C:\Users\Sharvani\Documents\filename.txt&quot;, &quot;r&quot;) as file:
     # Read the contents of the file and split into words
     contents = file.read()
@@ -760,9 +756,7 @@ unique_words = sorted(set(words))
 
 # Print the unique words
 for word in unique_words:
-    print(word)</code></pre><p id="aa4e42e0-ba48-4eed-bf91-80e1fd845199" class="">
-</p><h2 id="63342bb3-9f99-4b3c-a0de-a4c3a824ea9e" class="">Reverse a string word by word</h2><p id="a670b4db-0413-46e5-9ab6-3d278b745c4a" class="">
-</p><pre id="7fc61760-b870-4a31-8f9f-a84372221a97" class="code code-wrap"><code>class ReverseString:
+    print(word)</code></pre><h2 id="63342bb3-9f99-4b3c-a0de-a4c3a824ea9e" class="">Reverse a string word by word</h2><pre id="7fc61760-b870-4a31-8f9f-a84372221a97" class="code code-wrap"><code>class ReverseString:
 		def reverse_words(self, s: str) -&gt; str:
 
 	    words = s.split()
